@@ -10,10 +10,7 @@
 
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="Exceptions\" />
     <Folder Include="Forms\" />
-    <Folder Include="Services\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
 </Project>
