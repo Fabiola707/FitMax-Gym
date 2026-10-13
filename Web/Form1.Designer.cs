@@ -1,4 +1,4 @@
-﻿namespace FitMax
+﻿namespace Web
 {
     partial class Form1
     {

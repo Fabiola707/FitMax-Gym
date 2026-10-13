@@ -1,4 +1,4 @@
-namespace FitMax
+namespace Web
 {
     public partial class Form1 : Form
     {

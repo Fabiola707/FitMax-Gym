@@ -1,3 +1,5 @@
 <Solution>
+  <Project Path="Core/Core.csproj" Id="a047dc09-67d8-47f8-8b97-4aba2f52e48d" />
   <Project Path="FitMax/FitMax.csproj" />
+  <Project Path="Web/Web.csproj" Id="2d0c4993-4ad7-4d4f-ab8e-e7ce12ef193b" />
 </Solution>
