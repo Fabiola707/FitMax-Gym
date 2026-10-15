@@ -40,11 +40,11 @@
             textBox3 = new TextBox();
             textBox4 = new TextBox();
             textBox5 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
+            btn_registrar_cliente = new Button();
+            btn_cancelar = new Button();
+            btn_Elite = new Button();
+            btnLegenda = new Button();
+            btn_Titan = new Button();
             label4 = new Label();
             label5 = new Label();
             textBox6 = new TextBox();
@@ -64,6 +64,7 @@
             btn_db_empleados = new Button();
             btn_contabilidad = new Button();
             btn_clientes = new Button();
+            btn_regresar = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -190,72 +191,75 @@
             textBox5.TabIndex = 11;
             textBox5.Text = "DD/MM/AAAA";
             // 
-            // button1
+            // btn_registrar_cliente
             // 
-            button1.BackColor = Color.FromArgb(192, 0, 0);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Agency FB", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(532, 519);
-            button1.Name = "button1";
-            button1.Size = new Size(378, 41);
-            button1.TabIndex = 12;
-            button1.Text = "REGISTRAR CLIENTE                                                     >";
-            button1.UseVisualStyleBackColor = false;
+            btn_registrar_cliente.BackColor = Color.FromArgb(192, 0, 0);
+            btn_registrar_cliente.FlatAppearance.BorderSize = 0;
+            btn_registrar_cliente.FlatStyle = FlatStyle.Flat;
+            btn_registrar_cliente.Font = new Font("Agency FB", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_registrar_cliente.ForeColor = SystemColors.ButtonHighlight;
+            btn_registrar_cliente.Location = new Point(532, 519);
+            btn_registrar_cliente.Name = "btn_registrar_cliente";
+            btn_registrar_cliente.Size = new Size(378, 41);
+            btn_registrar_cliente.TabIndex = 12;
+            btn_registrar_cliente.Text = "REGISTRAR CLIENTE                                                     >";
+            btn_registrar_cliente.UseVisualStyleBackColor = false;
+            btn_registrar_cliente.Click += button1_Click;
             // 
-            // button2
+            // btn_cancelar
             // 
-            button2.BackgroundImage = Properties.Resources.BG5;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Agency FB", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(248, 517);
-            button2.Name = "button2";
-            button2.Size = new Size(254, 43);
-            button2.TabIndex = 13;
-            button2.Text = "CANCELAR";
-            button2.UseVisualStyleBackColor = true;
+            btn_cancelar.BackgroundImage = Properties.Resources.BG5;
+            btn_cancelar.FlatAppearance.BorderSize = 0;
+            btn_cancelar.FlatStyle = FlatStyle.Flat;
+            btn_cancelar.Font = new Font("Agency FB", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_cancelar.ForeColor = SystemColors.ControlLightLight;
+            btn_cancelar.Location = new Point(248, 517);
+            btn_cancelar.Name = "btn_cancelar";
+            btn_cancelar.Size = new Size(254, 43);
+            btn_cancelar.TabIndex = 13;
+            btn_cancelar.Text = "CANCELAR";
+            btn_cancelar.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btn_Elite
             // 
-            button3.BackgroundImage = Properties.Resources.BG41;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.ForeColor = SystemColors.ButtonHighlight;
-            button3.Location = new Point(274, 276);
-            button3.Name = "button3";
-            button3.Size = new Size(189, 38);
-            button3.TabIndex = 14;
-            button3.Text = "ELITE";
-            button3.UseVisualStyleBackColor = true;
+            btn_Elite.BackgroundImage = Properties.Resources.BG41;
+            btn_Elite.FlatStyle = FlatStyle.Flat;
+            btn_Elite.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_Elite.ForeColor = SystemColors.ButtonHighlight;
+            btn_Elite.Location = new Point(274, 276);
+            btn_Elite.Name = "btn_Elite";
+            btn_Elite.Size = new Size(189, 38);
+            btn_Elite.TabIndex = 14;
+            btn_Elite.Text = "ELITE";
+            btn_Elite.UseVisualStyleBackColor = true;
+            btn_Elite.Click += button3_Click;
             // 
-            // button4
+            // btnLegenda
             // 
-            button4.BackgroundImage = Properties.Resources.BG41;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.ForeColor = SystemColors.ButtonHighlight;
-            button4.Location = new Point(696, 276);
-            button4.Name = "button4";
-            button4.Size = new Size(189, 38);
-            button4.TabIndex = 15;
-            button4.Text = "LEGENDA";
-            button4.UseVisualStyleBackColor = true;
+            btnLegenda.BackgroundImage = Properties.Resources.BG41;
+            btnLegenda.FlatStyle = FlatStyle.Flat;
+            btnLegenda.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLegenda.ForeColor = SystemColors.ButtonHighlight;
+            btnLegenda.Location = new Point(696, 276);
+            btnLegenda.Name = "btnLegenda";
+            btnLegenda.Size = new Size(189, 38);
+            btnLegenda.TabIndex = 15;
+            btnLegenda.Text = "LEGENDA";
+            btnLegenda.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btn_Titan
             // 
-            button5.BackgroundImage = Properties.Resources.BG42;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button5.ForeColor = SystemColors.ButtonHighlight;
-            button5.Location = new Point(485, 276);
-            button5.Name = "button5";
-            button5.Size = new Size(189, 38);
-            button5.TabIndex = 16;
-            button5.Text = "TITÁN";
-            button5.UseVisualStyleBackColor = true;
+            btn_Titan.BackgroundImage = Properties.Resources.BG42;
+            btn_Titan.FlatStyle = FlatStyle.Flat;
+            btn_Titan.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_Titan.ForeColor = SystemColors.ButtonHighlight;
+            btn_Titan.Location = new Point(485, 276);
+            btn_Titan.Name = "btn_Titan";
+            btn_Titan.Size = new Size(189, 38);
+            btn_Titan.TabIndex = 16;
+            btn_Titan.Text = "TITÁN";
+            btn_Titan.UseVisualStyleBackColor = true;
+            btn_Titan.Click += button5_Click;
             // 
             // label4
             // 
@@ -499,12 +503,27 @@
             btn_clientes.Text = "CLIENTES";
             btn_clientes.UseVisualStyleBackColor = false;
             // 
+            // btn_regresar
+            // 
+            btn_regresar.BackColor = Color.Red;
+            btn_regresar.FlatAppearance.BorderSize = 0;
+            btn_regresar.FlatStyle = FlatStyle.Popup;
+            btn_regresar.Font = new Font("Agency FB", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_regresar.ForeColor = SystemColors.ButtonHighlight;
+            btn_regresar.Location = new Point(12, 481);
+            btn_regresar.Name = "btn_regresar";
+            btn_regresar.Size = new Size(134, 38);
+            btn_regresar.TabIndex = 36;
+            btn_regresar.Text = "REGRESAR";
+            btn_regresar.UseVisualStyleBackColor = false;
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1017, 574);
+            Controls.Add(btn_regresar);
             Controls.Add(btn_clientes);
             Controls.Add(btn_contabilidad);
             Controls.Add(btn_db_empleados);
@@ -524,11 +543,11 @@
             Controls.Add(textBox6);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btn_Titan);
+            Controls.Add(btnLegenda);
+            Controls.Add(btn_Elite);
+            Controls.Add(btn_cancelar);
+            Controls.Add(btn_registrar_cliente);
             Controls.Add(textBox5);
             Controls.Add(textBox4);
             Controls.Add(textBox3);
@@ -564,11 +583,11 @@
         private TextBox textBox3;
         private TextBox textBox4;
         private TextBox textBox5;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
+        private Button btn_registrar_cliente;
+        private Button btn_cancelar;
+        private Button btn_Elite;
+        private Button btnLegenda;
+        private Button btn_Titan;
         private Label label4;
         private Label label5;
         private TextBox textBox6;
@@ -588,5 +607,6 @@
         private Button btn_db_empleados;
         private Button btn_contabilidad;
         private Button btn_clientes;
+        private Button btn_regresar;
     }
 }

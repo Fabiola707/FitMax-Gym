@@ -1,5 +1,6 @@
 namespace FitMax
 {
+
     internal static class Program
     {
         /// <summary>

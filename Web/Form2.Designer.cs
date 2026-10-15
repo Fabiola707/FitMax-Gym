@@ -52,6 +52,7 @@
             lbl_ocupacion_gym = new Label();
             lbl_ingresos_totales = new Label();
             lbl_miembros_activos = new Label();
+            btn_cerrar_sesion = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -347,12 +348,27 @@
             lbl_miembros_activos.TabIndex = 24;
             lbl_miembros_activos.Text = "----";
             // 
+            // btn_cerrar_sesion
+            // 
+            btn_cerrar_sesion.BackColor = Color.Red;
+            btn_cerrar_sesion.FlatAppearance.BorderSize = 0;
+            btn_cerrar_sesion.FlatStyle = FlatStyle.Popup;
+            btn_cerrar_sesion.Font = new Font("Agency FB", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_cerrar_sesion.ForeColor = SystemColors.ButtonHighlight;
+            btn_cerrar_sesion.Location = new Point(12, 482);
+            btn_cerrar_sesion.Name = "btn_cerrar_sesion";
+            btn_cerrar_sesion.Size = new Size(134, 38);
+            btn_cerrar_sesion.TabIndex = 25;
+            btn_cerrar_sesion.Text = "CERRAR SESIÓN";
+            btn_cerrar_sesion.UseVisualStyleBackColor = false;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(1063, 556);
+            Controls.Add(btn_cerrar_sesion);
             Controls.Add(lbl_miembros_activos);
             Controls.Add(lbl_ingresos_totales);
             Controls.Add(lbl_ocupacion_gym);
@@ -413,5 +429,6 @@
         private Label lbl_ocupacion_gym;
         private Label lbl_ingresos_totales;
         private Label lbl_miembros_activos;
+        private Button btn_cerrar_sesion;
     }
 }
