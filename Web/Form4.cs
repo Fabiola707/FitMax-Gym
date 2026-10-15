@@ -49,5 +49,29 @@ namespace Web
         {
             //no necesario modificar
         }
+
+        private void btn_inicio_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            this.Hide();
+            form2.Show();
+        }
+
+        private void btn_clientes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_cerrar_sesion_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            this.Hide();
+            form1.Show();
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            //no es necesario modificar
+        }
     }
 }

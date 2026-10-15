@@ -75,5 +75,12 @@ namespace Web
             this.Hide();
             form3.Show();
         }
+
+        private void btn_cerrar_sesion_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            this.Hide();
+            form1.Show();
+        }
     }
 }
