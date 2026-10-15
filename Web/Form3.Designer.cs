@@ -477,6 +477,7 @@
             btn_db_empleados.TabIndex = 33;
             btn_db_empleados.Text = "EMPLEADOS";
             btn_db_empleados.UseVisualStyleBackColor = false;
+            btn_db_empleados.Click += btn_db_empleados_Click;
             // 
             // btn_contabilidad
             // 

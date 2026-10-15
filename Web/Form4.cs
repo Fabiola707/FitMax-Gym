@@ -5,11 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Web
 {
     public partial class Form4 : Form
     {
+        private static string connectionString = @"Server=localhost;Port=3307;Database=FitMaxDB;Uid=root;Pwd=;paola05";
         public Form4()
         {
             InitializeComponent();
@@ -72,6 +74,13 @@ namespace Web
         private void pictureBox7_Click(object sender, EventArgs e)
         {
             //no es necesario modificar
+        }
+
+        private void btn_db_empleados_Click(object sender, EventArgs e)
+        {
+            Form5 form5 = new Form5();
+            this.Hide();
+            form5.Show();
         }
     }
 }
