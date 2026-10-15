@@ -6,5 +6,25 @@ namespace Web
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            //no necesario modificar
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            //no necesario modificar
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            //no necesario modificar....
+        }
     }
 }
