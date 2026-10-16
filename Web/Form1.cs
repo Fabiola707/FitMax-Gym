@@ -49,9 +49,10 @@ namespace Web
                             MessageBox.Show("¡Bienvenido a FitMax Gym!", "Acceso Concedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             // Aquí abres tu formulario principal del sistema:
-                            // FormPrincipal principal = new FormPrincipal();
-                            // principal.Show();
-                            // this.Hide();
+                            Form2 form2 = new Form2();
+                            this.Hide();
+                            form2.Show();
+
                         }
                         else
                         {
