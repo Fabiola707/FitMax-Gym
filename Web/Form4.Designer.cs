@@ -69,12 +69,12 @@
             // 
             label14.AutoSize = true;
             label14.BackColor = Color.FromArgb(64, 64, 64);
-            label14.Font = new Font("Leelawadee UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.Font = new Font("Agency FB", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label14.ForeColor = Color.Red;
             label14.Image = Properties.Resources.BG4;
             label14.Location = new Point(36, 181);
             label14.Name = "label14";
-            label14.Size = new Size(90, 17);
+            label14.Size = new Size(108, 31);
             label14.TabIndex = 32;
             label14.Text = "FITMAX GYM";
             label14.Click += label14_Click;
@@ -85,6 +85,7 @@
             btn_inicio.BackgroundImage = Properties.Resources.BG4;
             btn_inicio.FlatAppearance.BorderSize = 0;
             btn_inicio.FlatStyle = FlatStyle.Flat;
+            btn_inicio.Font = new Font("Agency FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_inicio.ForeColor = SystemColors.AppWorkspace;
             btn_inicio.Location = new Point(1, 234);
             btn_inicio.Name = "btn_inicio";
@@ -100,6 +101,7 @@
             btn_db_empleados.BackgroundImage = Properties.Resources.BG4;
             btn_db_empleados.FlatAppearance.BorderSize = 0;
             btn_db_empleados.FlatStyle = FlatStyle.Flat;
+            btn_db_empleados.Font = new Font("Agency FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_db_empleados.ForeColor = SystemColors.AppWorkspace;
             btn_db_empleados.Location = new Point(1, 267);
             btn_db_empleados.Margin = new Padding(3, 2, 3, 2);
@@ -116,6 +118,7 @@
             btn_contabilidad.BackgroundImage = Properties.Resources.BG4;
             btn_contabilidad.FlatAppearance.BorderSize = 0;
             btn_contabilidad.FlatStyle = FlatStyle.Flat;
+            btn_contabilidad.Font = new Font("Agency FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_contabilidad.ForeColor = SystemColors.AppWorkspace;
             btn_contabilidad.Location = new Point(1, 299);
             btn_contabilidad.Margin = new Padding(3, 2, 3, 2);
@@ -131,6 +134,7 @@
             btn_clientes.BackgroundImage = Properties.Resources.BG4;
             btn_clientes.FlatAppearance.BorderSize = 0;
             btn_clientes.FlatStyle = FlatStyle.Flat;
+            btn_clientes.Font = new Font("Agency FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_clientes.ForeColor = SystemColors.AppWorkspace;
             btn_clientes.Location = new Point(1, 332);
             btn_clientes.Name = "btn_clientes";
@@ -196,11 +200,12 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.AppWorkspace;
             label4.Image = Properties.Resources.BG5;
             label4.Location = new Point(230, 116);
             label4.Name = "label4";
-            label4.Size = new Size(112, 15);
+            label4.Size = new Size(95, 18);
             label4.TabIndex = 42;
             label4.Text = "TOTAL DE CLIENTES";
             label4.Click += label4_Click;
@@ -208,11 +213,12 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.AppWorkspace;
             label2.Image = Properties.Resources.BG5;
             label2.Location = new Point(470, 116);
             label2.Name = "label2";
-            label2.Size = new Size(150, 15);
+            label2.Size = new Size(120, 18);
             label2.TabIndex = 43;
             label2.Text = "MEMBRESIAS POR VENCER";
             label2.Click += label2_Click;
@@ -220,11 +226,12 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.AppWorkspace;
             label3.Image = Properties.Resources.BG5;
             label3.Location = new Point(714, 116);
             label3.Name = "label3";
-            label3.Size = new Size(110, 15);
+            label3.Size = new Size(87, 18);
             label3.TabIndex = 44;
             label3.Text = "ASISTENCIA MEDIA";
             label3.Click += label3_Click;
@@ -271,7 +278,7 @@
             btn_cerrar_sesion.BackColor = Color.Red;
             btn_cerrar_sesion.FlatAppearance.BorderSize = 0;
             btn_cerrar_sesion.FlatStyle = FlatStyle.Popup;
-            btn_cerrar_sesion.Font = new Font("Agency FB", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_cerrar_sesion.Font = new Font("Agency FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_cerrar_sesion.ForeColor = SystemColors.ButtonHighlight;
             btn_cerrar_sesion.Location = new Point(12, 526);
             btn_cerrar_sesion.Name = "btn_cerrar_sesion";

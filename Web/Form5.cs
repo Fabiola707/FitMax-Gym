@@ -39,7 +39,7 @@ namespace Web
                 puesto = "Entrenador";
             }
 
-           
+
             if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(usuario) ||
                 string.IsNullOrEmpty(password) || string.IsNullOrEmpty(puesto))
             {
@@ -101,13 +101,13 @@ namespace Web
                     using (MySqlDataAdapter adaptador = new MySqlDataAdapter(query, conexion))
                     {
                         DataTable dt = new DataTable();
-                        adaptador.Fill(dt);    
+                        adaptador.Fill(dt);
                     }
                 }
             }
             catch (Exception)
             {
-            
+
             }
         }
 
@@ -116,11 +116,11 @@ namespace Web
             tbx_nombre_empleado.Clear();
             tbx_usuario_empleado.Clear();
             tbx_empleado_contraseña.Clear();
-           
+
             tbx_nombre_empleado.Focus();
         }
 
-private void btn_inicio_Click(object sender, EventArgs e)
+        private void btn_inicio_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2();
             this.Hide();
@@ -162,6 +162,11 @@ private void btn_inicio_Click(object sender, EventArgs e)
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_contabilidad_Click(object sender, EventArgs e)
         {
 
         }

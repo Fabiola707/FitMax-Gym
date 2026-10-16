@@ -46,7 +46,7 @@
             btn_inicio_sesion.BackColor = Color.Red;
             btn_inicio_sesion.FlatAppearance.BorderSize = 0;
             btn_inicio_sesion.FlatStyle = FlatStyle.Flat;
-            btn_inicio_sesion.Font = new Font("Agency FB", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_inicio_sesion.Font = new Font("Agency FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_inicio_sesion.ForeColor = Color.WhiteSmoke;
             btn_inicio_sesion.Location = new Point(440, 362);
             btn_inicio_sesion.Name = "btn_inicio_sesion";
@@ -60,12 +60,12 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.FromArgb(64, 64, 64);
-            label1.Font = new Font("Agency FB", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.AppWorkspace;
             label1.Image = Properties.Resources.BG5;
             label1.Location = new Point(440, 263);
             label1.Name = "label1";
-            label1.Size = new Size(55, 17);
+            label1.Size = new Size(54, 18);
             label1.TabIndex = 2;
             label1.Text = "USERNAME";
             label1.Click += label1_Click;
@@ -74,12 +74,12 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.FromArgb(64, 64, 64);
-            label2.Font = new Font("Agency FB", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.AppWorkspace;
             label2.Image = Properties.Resources.BG5;
             label2.Location = new Point(440, 311);
             label2.Name = "label2";
-            label2.Size = new Size(56, 17);
+            label2.Size = new Size(54, 18);
             label2.TabIndex = 3;
             label2.Text = "PASWORD";
             label2.Click += label2_Click;
