@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
             pictureBox1 = new PictureBox();
             label14 = new Label();
             btn_inicio = new Button();
@@ -45,10 +46,13 @@
             lbl_total_clientes = new Label();
             lbl_membresias_por_vencer = new Label();
             lbl_promedio_asistencia = new Label();
+            btn_cerrar_sesion = new Button();
+            pictureBox7 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -68,7 +72,7 @@
             label14.Font = new Font("Leelawadee UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label14.ForeColor = Color.Red;
             label14.Image = Properties.Resources.BG4;
-            label14.Location = new Point(37, 116);
+            label14.Location = new Point(36, 181);
             label14.Name = "label14";
             label14.Size = new Size(90, 17);
             label14.TabIndex = 32;
@@ -82,12 +86,13 @@
             btn_inicio.FlatAppearance.BorderSize = 0;
             btn_inicio.FlatStyle = FlatStyle.Flat;
             btn_inicio.ForeColor = SystemColors.AppWorkspace;
-            btn_inicio.Location = new Point(1, 146);
+            btn_inicio.Location = new Point(1, 234);
             btn_inicio.Name = "btn_inicio";
             btn_inicio.Size = new Size(161, 28);
             btn_inicio.TabIndex = 33;
             btn_inicio.Text = "INICIO";
             btn_inicio.UseVisualStyleBackColor = false;
+            btn_inicio.Click += btn_inicio_Click;
             // 
             // btn_db_empleados
             // 
@@ -96,13 +101,14 @@
             btn_db_empleados.FlatAppearance.BorderSize = 0;
             btn_db_empleados.FlatStyle = FlatStyle.Flat;
             btn_db_empleados.ForeColor = SystemColors.AppWorkspace;
-            btn_db_empleados.Location = new Point(1, 179);
+            btn_db_empleados.Location = new Point(1, 267);
             btn_db_empleados.Margin = new Padding(3, 2, 3, 2);
             btn_db_empleados.Name = "btn_db_empleados";
             btn_db_empleados.Size = new Size(161, 28);
             btn_db_empleados.TabIndex = 34;
             btn_db_empleados.Text = "EMPLEADOS";
             btn_db_empleados.UseVisualStyleBackColor = false;
+            btn_db_empleados.Click += btn_db_empleados_Click;
             // 
             // btn_contabilidad
             // 
@@ -111,7 +117,7 @@
             btn_contabilidad.FlatAppearance.BorderSize = 0;
             btn_contabilidad.FlatStyle = FlatStyle.Flat;
             btn_contabilidad.ForeColor = SystemColors.AppWorkspace;
-            btn_contabilidad.Location = new Point(1, 211);
+            btn_contabilidad.Location = new Point(1, 299);
             btn_contabilidad.Margin = new Padding(3, 2, 3, 2);
             btn_contabilidad.Name = "btn_contabilidad";
             btn_contabilidad.Size = new Size(161, 28);
@@ -126,12 +132,13 @@
             btn_clientes.FlatAppearance.BorderSize = 0;
             btn_clientes.FlatStyle = FlatStyle.Flat;
             btn_clientes.ForeColor = SystemColors.AppWorkspace;
-            btn_clientes.Location = new Point(1, 244);
+            btn_clientes.Location = new Point(1, 332);
             btn_clientes.Name = "btn_clientes";
             btn_clientes.Size = new Size(161, 28);
             btn_clientes.TabIndex = 36;
             btn_clientes.Text = "CLIENTES";
             btn_clientes.UseVisualStyleBackColor = false;
+            btn_clientes.Click += btn_clientes_Click;
             // 
             // label1
             // 
@@ -259,12 +266,39 @@
             lbl_promedio_asistencia.TabIndex = 47;
             lbl_promedio_asistencia.Text = "----";
             // 
+            // btn_cerrar_sesion
+            // 
+            btn_cerrar_sesion.BackColor = Color.Red;
+            btn_cerrar_sesion.FlatAppearance.BorderSize = 0;
+            btn_cerrar_sesion.FlatStyle = FlatStyle.Popup;
+            btn_cerrar_sesion.Font = new Font("Agency FB", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_cerrar_sesion.ForeColor = SystemColors.ButtonHighlight;
+            btn_cerrar_sesion.Location = new Point(12, 526);
+            btn_cerrar_sesion.Name = "btn_cerrar_sesion";
+            btn_cerrar_sesion.Size = new Size(134, 38);
+            btn_cerrar_sesion.TabIndex = 48;
+            btn_cerrar_sesion.Text = "CERRAR SESIÓN";
+            btn_cerrar_sesion.UseVisualStyleBackColor = false;
+            btn_cerrar_sesion.Click += btn_cerrar_sesion_Click;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.BackgroundImage = (Image)resources.GetObject("pictureBox7.BackgroundImage");
+            pictureBox7.Location = new Point(27, 70);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(110, 100);
+            pictureBox7.TabIndex = 49;
+            pictureBox7.TabStop = false;
+            pictureBox7.Click += pictureBox7_Click;
+            // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1018, 576);
+            Controls.Add(pictureBox7);
+            Controls.Add(btn_cerrar_sesion);
             Controls.Add(lbl_promedio_asistencia);
             Controls.Add(lbl_membresias_por_vencer);
             Controls.Add(lbl_total_clientes);
@@ -289,6 +323,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -312,5 +347,7 @@
         private Label lbl_total_clientes;
         private Label lbl_membresias_por_vencer;
         private Label lbl_promedio_asistencia;
+        private Button btn_cerrar_sesion;
+        private PictureBox pictureBox7;
     }
 }

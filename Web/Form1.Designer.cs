@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             btn_inicio_sesion = new Button();
             label1 = new Label();
             label2 = new Label();
@@ -35,7 +36,9 @@
             txb_contraseña = new TextBox();
             txb_usuario = new TextBox();
             pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // btn_inicio_sesion
@@ -45,7 +48,7 @@
             btn_inicio_sesion.FlatStyle = FlatStyle.Flat;
             btn_inicio_sesion.Font = new Font("Agency FB", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_inicio_sesion.ForeColor = Color.WhiteSmoke;
-            btn_inicio_sesion.Location = new Point(440, 354);
+            btn_inicio_sesion.Location = new Point(440, 362);
             btn_inicio_sesion.Name = "btn_inicio_sesion";
             btn_inicio_sesion.Size = new Size(169, 38);
             btn_inicio_sesion.TabIndex = 0;
@@ -60,7 +63,7 @@
             label1.Font = new Font("Agency FB", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.AppWorkspace;
             label1.Image = Properties.Resources.BG5;
-            label1.Location = new Point(440, 237);
+            label1.Location = new Point(440, 263);
             label1.Name = "label1";
             label1.Size = new Size(55, 17);
             label1.TabIndex = 2;
@@ -74,7 +77,7 @@
             label2.Font = new Font("Agency FB", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.AppWorkspace;
             label2.Image = Properties.Resources.BG5;
-            label2.Location = new Point(440, 295);
+            label2.Location = new Point(440, 311);
             label2.Name = "label2";
             label2.Size = new Size(56, 17);
             label2.TabIndex = 3;
@@ -88,7 +91,7 @@
             label3.Font = new Font("Agency FB", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Red;
             label3.Image = Properties.Resources.BG5;
-            label3.Location = new Point(470, 190);
+            label3.Location = new Point(470, 232);
             label3.Name = "label3";
             label3.Size = new Size(108, 31);
             label3.TabIndex = 4;
@@ -101,10 +104,11 @@
             txb_contraseña.BorderStyle = BorderStyle.FixedSingle;
             txb_contraseña.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txb_contraseña.ForeColor = SystemColors.ButtonHighlight;
-            txb_contraseña.Location = new Point(440, 315);
+            txb_contraseña.Location = new Point(440, 331);
             txb_contraseña.Name = "txb_contraseña";
             txb_contraseña.Size = new Size(169, 25);
             txb_contraseña.TabIndex = 5;
+            txb_contraseña.TextChanged += txb_contraseña_TextChanged;
             // 
             // txb_usuario
             // 
@@ -112,10 +116,11 @@
             txb_usuario.BorderStyle = BorderStyle.FixedSingle;
             txb_usuario.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txb_usuario.ForeColor = SystemColors.ButtonHighlight;
-            txb_usuario.Location = new Point(440, 257);
+            txb_usuario.Location = new Point(440, 283);
             txb_usuario.Name = "txb_usuario";
             txb_usuario.Size = new Size(169, 25);
             txb_usuario.TabIndex = 6;
+            txb_usuario.TextChanged += txb_usuario_TextChanged;
             // 
             // pictureBox1
             // 
@@ -123,9 +128,18 @@
             pictureBox1.BackgroundImage = Properties.Resources.BG7;
             pictureBox1.Location = new Point(400, 91);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(256, 331);
+            pictureBox1.Size = new Size(256, 348);
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
+            pictureBox2.Location = new Point(470, 129);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(105, 100);
+            pictureBox2.TabIndex = 8;
+            pictureBox2.TabStop = false;
             // 
             // Form1
             // 
@@ -133,6 +147,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1068, 557);
+            Controls.Add(pictureBox2);
             Controls.Add(txb_usuario);
             Controls.Add(txb_contraseña);
             Controls.Add(label3);
@@ -143,6 +158,7 @@
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -156,5 +172,6 @@
         private TextBox txb_contraseña;
         private TextBox txb_usuario;
         private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }

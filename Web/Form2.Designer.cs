@@ -52,12 +52,15 @@
             lbl_ocupacion_gym = new Label();
             lbl_ingresos_totales = new Label();
             lbl_miembros_activos = new Label();
+            btn_cerrar_sesion = new Button();
+            pictureBox7 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -66,7 +69,7 @@
             pictureBox1.BackgroundImage = Properties.Resources.BG4;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(161, 558);
+            pictureBox1.Size = new Size(161, 574);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -77,7 +80,7 @@
             label1.Font = new Font("Leelawadee UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Red;
             label1.Image = Properties.Resources.BG4;
-            label1.Location = new Point(38, 113);
+            label1.Location = new Point(36, 179);
             label1.Name = "label1";
             label1.Size = new Size(90, 17);
             label1.TabIndex = 1;
@@ -91,7 +94,7 @@
             btn_inicio.FlatAppearance.BorderSize = 0;
             btn_inicio.FlatStyle = FlatStyle.Flat;
             btn_inicio.ForeColor = SystemColors.AppWorkspace;
-            btn_inicio.Location = new Point(0, 145);
+            btn_inicio.Location = new Point(0, 231);
             btn_inicio.Name = "btn_inicio";
             btn_inicio.Size = new Size(161, 28);
             btn_inicio.TabIndex = 2;
@@ -106,7 +109,7 @@
             btn_clientes.FlatAppearance.BorderSize = 0;
             btn_clientes.FlatStyle = FlatStyle.Flat;
             btn_clientes.ForeColor = SystemColors.AppWorkspace;
-            btn_clientes.Location = new Point(0, 243);
+            btn_clientes.Location = new Point(0, 329);
             btn_clientes.Name = "btn_clientes";
             btn_clientes.Size = new Size(161, 28);
             btn_clientes.TabIndex = 3;
@@ -121,7 +124,7 @@
             btn_contabilidad.FlatAppearance.BorderSize = 0;
             btn_contabilidad.FlatStyle = FlatStyle.Flat;
             btn_contabilidad.ForeColor = SystemColors.AppWorkspace;
-            btn_contabilidad.Location = new Point(0, 210);
+            btn_contabilidad.Location = new Point(0, 296);
             btn_contabilidad.Margin = new Padding(3, 2, 3, 2);
             btn_contabilidad.Name = "btn_contabilidad";
             btn_contabilidad.Size = new Size(161, 28);
@@ -136,13 +139,14 @@
             btn_db_empleados.FlatAppearance.BorderSize = 0;
             btn_db_empleados.FlatStyle = FlatStyle.Flat;
             btn_db_empleados.ForeColor = SystemColors.AppWorkspace;
-            btn_db_empleados.Location = new Point(0, 178);
+            btn_db_empleados.Location = new Point(0, 264);
             btn_db_empleados.Margin = new Padding(3, 2, 3, 2);
             btn_db_empleados.Name = "btn_db_empleados";
             btn_db_empleados.Size = new Size(161, 28);
             btn_db_empleados.TabIndex = 7;
             btn_db_empleados.Text = "EMPLEADOS";
             btn_db_empleados.UseVisualStyleBackColor = false;
+            btn_db_empleados.Click += btn_db_empleados_Click;
             // 
             // pictureBox2
             // 
@@ -347,12 +351,38 @@
             lbl_miembros_activos.TabIndex = 24;
             lbl_miembros_activos.Text = "----";
             // 
+            // btn_cerrar_sesion
+            // 
+            btn_cerrar_sesion.BackColor = Color.Red;
+            btn_cerrar_sesion.FlatAppearance.BorderSize = 0;
+            btn_cerrar_sesion.FlatStyle = FlatStyle.Popup;
+            btn_cerrar_sesion.Font = new Font("Agency FB", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_cerrar_sesion.ForeColor = SystemColors.ButtonHighlight;
+            btn_cerrar_sesion.Location = new Point(12, 525);
+            btn_cerrar_sesion.Name = "btn_cerrar_sesion";
+            btn_cerrar_sesion.Size = new Size(134, 38);
+            btn_cerrar_sesion.TabIndex = 25;
+            btn_cerrar_sesion.Text = "CERRAR SESIÓN";
+            btn_cerrar_sesion.UseVisualStyleBackColor = false;
+            btn_cerrar_sesion.Click += btn_cerrar_sesion_Click;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.BackgroundImage = (Image)resources.GetObject("pictureBox7.BackgroundImage");
+            pictureBox7.Location = new Point(25, 66);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(110, 100);
+            pictureBox7.TabIndex = 26;
+            pictureBox7.TabStop = false;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(1063, 556);
+            ClientSize = new Size(1063, 575);
+            Controls.Add(pictureBox7);
+            Controls.Add(btn_cerrar_sesion);
             Controls.Add(lbl_miembros_activos);
             Controls.Add(lbl_ingresos_totales);
             Controls.Add(lbl_ocupacion_gym);
@@ -384,6 +414,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -413,5 +444,7 @@
         private Label lbl_ocupacion_gym;
         private Label lbl_ingresos_totales;
         private Label lbl_miembros_activos;
+        private Button btn_cerrar_sesion;
+        private PictureBox pictureBox7;
     }
 }
