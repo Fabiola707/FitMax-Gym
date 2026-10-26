@@ -64,7 +64,7 @@
             pictureBox7 = new PictureBox();
             btn_cerrar_sesion = new Button();
             dtp_inicio_membresia = new DateTimePicker();
-            dtp_fin_membresia = new DateTimePicker();
+            lbl_fecha_fin = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -512,13 +512,20 @@
             dtp_inicio_membresia.Name = "dtp_inicio_membresia";
             dtp_inicio_membresia.Size = new Size(290, 23);
             dtp_inicio_membresia.TabIndex = 39;
+            dtp_inicio_membresia.ValueChanged += dtp_inicio_membresia_ValueChanged;
             // 
-            // dtp_fin_membresia
+            // lbl_fecha_fin
             // 
-            dtp_fin_membresia.Location = new Point(595, 305);
-            dtp_fin_membresia.Name = "dtp_fin_membresia";
-            dtp_fin_membresia.Size = new Size(290, 23);
-            dtp_fin_membresia.TabIndex = 40;
+            lbl_fecha_fin.AutoSize = true;
+            lbl_fecha_fin.Font = new Font("Agency FB", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_fecha_fin.ForeColor = Color.FromArgb(255, 128, 128);
+            lbl_fecha_fin.Image = Properties.Resources.BG4;
+            lbl_fecha_fin.Location = new Point(595, 305);
+            lbl_fecha_fin.Name = "lbl_fecha_fin";
+            lbl_fecha_fin.Size = new Size(295, 24);
+            lbl_fecha_fin.TabIndex = 40;
+            lbl_fecha_fin.Text = "---------------------------------------------------------";
+            lbl_fecha_fin.Click += lbl_fecha_fin_Click;
             // 
             // Form3
             // 
@@ -526,7 +533,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1017, 574);
-            Controls.Add(dtp_fin_membresia);
+            Controls.Add(lbl_fecha_fin);
             Controls.Add(dtp_inicio_membresia);
             Controls.Add(btn_cerrar_sesion);
             Controls.Add(pictureBox7);
@@ -611,6 +618,6 @@
         private PictureBox pictureBox7;
         private Button btn_cerrar_sesion;
         private DateTimePicker dtp_inicio_membresia;
-        private DateTimePicker dtp_fin_membresia;
+        private Label lbl_fecha_fin;
     }
 }

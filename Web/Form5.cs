@@ -9,7 +9,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Core;
-namespace Web
+namespace Web//funcional
 {
     public partial class Form5 : Form
     {
@@ -53,7 +53,7 @@ namespace Web
                 return;
             }
 
-            string query = "INSERT INTO usuarios (nombre, NombreUsuario, password, puesto) " +
+            string query = "INSERT INTO usuarios (Nombre, NombreUsuario, ContrasenaHash, Rol) " +
                            "VALUES (@nombre, @usuario, @password, @puesto)";
 
             try

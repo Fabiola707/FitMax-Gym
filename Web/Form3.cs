@@ -10,12 +10,14 @@ using System.Globalization;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Web
+namespace Web//funcional
 {
     public partial class Form3 : Form
     {
         private int idMembresiaSeleccionada = 0;
-        //private static string connectionString = @"Server=localhost;Port=3306;Database=fitmaxDB;Uid=root;Pwd=19503236;";
+        //private static string connectionString = @"Server=localhost;Port=3306;Database=fitmaxDB;Uid=root;Pwd=19503236;"
+        //variable global
+        private DateTime fechaFinCalculada;
         public Form3()
         {
             InitializeComponent();
@@ -23,6 +25,7 @@ namespace Web
             btn_Titan.Click += btn_Titan_Click;
             btn_leyenda.Click += btn_leyenda_Click;
             btn_registrar_cliente.Click += btn_registrar_cliente_Click;
+            CalcularFechaFin();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -114,7 +117,6 @@ namespace Web
         {
             SeleccionarMembresia(2, "Titán");
         }
-
         private void btn_registrar_cliente_Click(object sender, EventArgs e)//registrar cliente
         {
             string nombres = textBox3.Text.Trim();
@@ -156,7 +158,7 @@ namespace Web
                 return;
             }
             DateTime fechaInicio = dtp_inicio_membresia.Value;
-            DateTime fechaFin = dtp_fin_membresia.Value;
+            DateTime fechaFin = fechaFinCalculada;
 
             if (fechaFin < fechaInicio)
             {
@@ -260,7 +262,7 @@ namespace Web
             textBox7.Clear();
             textBox8.Clear();
             dtp_inicio_membresia.Value = DateTime.Now;
-            dtp_fin_membresia.Value = DateTime.Now;
+            //dtp_fin_membresia.Value = DateTime.Now;
             idMembresiaSeleccionada = 0;
         }
 
@@ -320,6 +322,22 @@ namespace Web
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void lbl_fecha_fin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtp_inicio_membresia_ValueChanged(object sender, EventArgs e)
+        {
+            CalcularFechaFin();
+        }
+        private void CalcularFechaFin()
+        {
+            DateTime fechaInicio = dtp_inicio_membresia.Value;
+            fechaFinCalculada = fechaInicio.AddDays(30);
+            lbl_fecha_fin.Text = fechaFinCalculada.ToString("yyyy-MM-dd");
         }
     }
 }

@@ -208,9 +208,9 @@
             // pictureBox3
             // 
             pictureBox3.BackgroundImage = Properties.Resources.BG5;
-            pictureBox3.Location = new Point(400, 298);
+            pictureBox3.Location = new Point(371, 298);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(552, 231);
+            pictureBox3.Size = new Size(581, 245);
             pictureBox3.TabIndex = 62;
             pictureBox3.TabStop = false;
             // 
@@ -222,7 +222,7 @@
             label6.Font = new Font("Agency FB", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(255, 128, 128);
             label6.Image = Properties.Resources.BG5;
-            label6.Location = new Point(853, 316);
+            label6.Location = new Point(844, 316);
             label6.Name = "label6";
             label6.Size = new Size(87, 25);
             label6.TabIndex = 63;
@@ -373,7 +373,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.GridColor = SystemColors.MenuText;
-            dataGridView1.Location = new Point(424, 344);
+            dataGridView1.Location = new Point(404, 344);
             dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.Black;
@@ -389,7 +389,7 @@
             dataGridViewCellStyle5.SelectionBackColor = Color.Red;
             dataGridViewCellStyle5.SelectionForeColor = Color.White;
             dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridView1.Size = new Size(516, 145);
+            dataGridView1.Size = new Size(527, 185);
             dataGridView1.TabIndex = 73;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -400,9 +400,9 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Agency FB", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(220, 298);
+            button1.Location = new Point(220, 299);
             button1.Name = "button1";
-            button1.Size = new Size(132, 231);
+            button1.Size = new Size(132, 244);
             button1.TabIndex = 74;
             button1.Text = "REGRESAR";
             button1.UseVisualStyleBackColor = false;

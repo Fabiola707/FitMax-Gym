@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form7));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             pictureBox1 = new PictureBox();
             pictureBox7 = new PictureBox();
             label14 = new Label();
@@ -172,27 +175,51 @@
             dataGridViewCellStyle1.SelectionForeColor = Color.White;
             dgv_existencia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgv_existencia.BackgroundColor = Color.FromArgb(64, 64, 64);
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Black;
+            dataGridViewCellStyle2.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Red;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgv_existencia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgv_existencia.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv_existencia.Location = new Point(190, 99);
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.Black;
+            dataGridViewCellStyle3.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Red;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgv_existencia.DefaultCellStyle = dataGridViewCellStyle3;
+            dgv_existencia.Location = new Point(189, 99);
             dgv_existencia.Name = "dgv_existencia";
-            dgv_existencia.Size = new Size(362, 165);
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.Black;
+            dataGridViewCellStyle4.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = Color.Red;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgv_existencia.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dgv_existencia.Size = new Size(341, 231);
             dgv_existencia.TabIndex = 79;
             dgv_existencia.CellContentClick += dgv_existencia_CellContentClick;
             // 
             // pictureBox2
             // 
             pictureBox2.BackgroundImage = Properties.Resources.BG4;
-            pictureBox2.Location = new Point(579, 28);
+            pictureBox2.Location = new Point(558, 28);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(409, 513);
+            pictureBox2.Size = new Size(434, 338);
             pictureBox2.TabIndex = 80;
             pictureBox2.TabStop = false;
             // 
             // txb_producto_nombre_id
             // 
-            txb_producto_nombre_id.Location = new Point(593, 99);
+            txb_producto_nombre_id.Location = new Point(581, 67);
             txb_producto_nombre_id.Name = "txb_producto_nombre_id";
-            txb_producto_nombre_id.Size = new Size(201, 23);
+            txb_producto_nombre_id.Size = new Size(141, 23);
             txb_producto_nombre_id.TabIndex = 81;
             // 
             // btn_buscar_producto
@@ -202,9 +229,9 @@
             btn_buscar_producto.FlatStyle = FlatStyle.Flat;
             btn_buscar_producto.Font = new Font("Agency FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_buscar_producto.ForeColor = SystemColors.Window;
-            btn_buscar_producto.Location = new Point(812, 66);
+            btn_buscar_producto.Location = new Point(580, 108);
             btn_buscar_producto.Name = "btn_buscar_producto";
-            btn_buscar_producto.Size = new Size(155, 56);
+            btn_buscar_producto.Size = new Size(142, 42);
             btn_buscar_producto.TabIndex = 82;
             btn_buscar_producto.Text = "BUSCAR";
             btn_buscar_producto.UseVisualStyleBackColor = false;
@@ -212,17 +239,17 @@
             // 
             // dgv_compra
             // 
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(64, 64, 64);
-            dataGridViewCellStyle2.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.Red;
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dgv_compra.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(64, 64, 64);
+            dataGridViewCellStyle5.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.Red;
+            dataGridViewCellStyle5.SelectionForeColor = Color.White;
+            dgv_compra.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             dgv_compra.BackgroundColor = Color.FromArgb(64, 64, 64);
             dgv_compra.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv_compra.Location = new Point(190, 307);
+            dgv_compra.Location = new Point(189, 382);
             dgv_compra.Name = "dgv_compra";
-            dgv_compra.Size = new Size(362, 165);
+            dgv_compra.Size = new Size(533, 165);
             dgv_compra.TabIndex = 83;
             dgv_compra.CellContentClick += dgv_compra_CellContentClick;
             // 
@@ -233,9 +260,9 @@
             btn_agregar_a_lista.FlatStyle = FlatStyle.Flat;
             btn_agregar_a_lista.Font = new Font("Agency FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_agregar_a_lista.ForeColor = SystemColors.Window;
-            btn_agregar_a_lista.Location = new Point(593, 226);
+            btn_agregar_a_lista.Location = new Point(743, 110);
             btn_agregar_a_lista.Name = "btn_agregar_a_lista";
-            btn_agregar_a_lista.Size = new Size(374, 38);
+            btn_agregar_a_lista.Size = new Size(224, 38);
             btn_agregar_a_lista.TabIndex = 84;
             btn_agregar_a_lista.Text = "AGREGAR AL CARRITO";
             btn_agregar_a_lista.UseVisualStyleBackColor = false;
@@ -247,7 +274,7 @@
             label4.Font = new Font("Agency FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.ControlLightLight;
             label4.Image = Properties.Resources.BG41;
-            label4.Location = new Point(593, 60);
+            label4.Location = new Point(581, 43);
             label4.Name = "label4";
             label4.Size = new Size(117, 20);
             label4.TabIndex = 88;
@@ -259,7 +286,7 @@
             lbl_mostrar_precio.Font = new Font("Agency FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl_mostrar_precio.ForeColor = Color.FromArgb(255, 128, 128);
             lbl_mostrar_precio.Image = Properties.Resources.BG41;
-            lbl_mostrar_precio.Location = new Point(854, 175);
+            lbl_mostrar_precio.Location = new Point(888, 70);
             lbl_mostrar_precio.Name = "lbl_mostrar_precio";
             lbl_mostrar_precio.Size = new Size(79, 20);
             lbl_mostrar_precio.TabIndex = 89;
@@ -283,7 +310,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Agency FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.ControlLightLight;
-            label3.Location = new Point(353, 275);
+            label3.Location = new Point(189, 346);
             label3.Name = "label3";
             label3.Size = new Size(199, 20);
             label3.TabIndex = 91;
@@ -291,9 +318,9 @@
             // 
             // txb_cantidad_productos
             // 
-            txb_cantidad_productos.Location = new Point(593, 176);
+            txb_cantidad_productos.Location = new Point(743, 67);
             txb_cantidad_productos.Name = "txb_cantidad_productos";
-            txb_cantidad_productos.Size = new Size(201, 23);
+            txb_cantidad_productos.Size = new Size(121, 23);
             txb_cantidad_productos.TabIndex = 92;
             txb_cantidad_productos.TextChanged += txb_cantidad_productos_TextChanged;
             // 
@@ -303,7 +330,7 @@
             label1.Font = new Font("Agency FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlLightLight;
             label1.Image = Properties.Resources.BG41;
-            label1.Location = new Point(593, 136);
+            label1.Location = new Point(743, 43);
             label1.Name = "label1";
             label1.Size = new Size(105, 20);
             label1.TabIndex = 93;
@@ -314,7 +341,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Agency FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = SystemColors.ControlLightLight;
-            label5.Location = new Point(403, 73);
+            label5.Location = new Point(381, 66);
             label5.Name = "label5";
             label5.Size = new Size(149, 20);
             label5.TabIndex = 94;
@@ -325,7 +352,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Agency FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(255, 128, 128);
-            label6.Location = new Point(210, 510);
+            label6.Location = new Point(743, 512);
             label6.Name = "label6";
             label6.Size = new Size(46, 20);
             label6.TabIndex = 95;
@@ -336,7 +363,7 @@
             lbl_total_a_pagar.AutoSize = true;
             lbl_total_a_pagar.Font = new Font("Agency FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl_total_a_pagar.ForeColor = Color.FromArgb(255, 128, 128);
-            lbl_total_a_pagar.Location = new Point(473, 510);
+            lbl_total_a_pagar.Location = new Point(913, 512);
             lbl_total_a_pagar.Name = "lbl_total_a_pagar";
             lbl_total_a_pagar.Size = new Size(79, 20);
             lbl_total_a_pagar.TabIndex = 96;
@@ -349,9 +376,9 @@
             btn_pago_tarjeta.FlatStyle = FlatStyle.Flat;
             btn_pago_tarjeta.Font = new Font("Agency FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_pago_tarjeta.ForeColor = SystemColors.Control;
-            btn_pago_tarjeta.Location = new Point(593, 292);
+            btn_pago_tarjeta.Location = new Point(826, 233);
             btn_pago_tarjeta.Name = "btn_pago_tarjeta";
-            btn_pago_tarjeta.Size = new Size(171, 38);
+            btn_pago_tarjeta.Size = new Size(141, 38);
             btn_pago_tarjeta.TabIndex = 97;
             btn_pago_tarjeta.Text = "TARJETA";
             btn_pago_tarjeta.UseVisualStyleBackColor = true;
@@ -363,9 +390,9 @@
             btn_pago_efectivo.FlatStyle = FlatStyle.Flat;
             btn_pago_efectivo.Font = new Font("Agency FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_pago_efectivo.ForeColor = Color.White;
-            btn_pago_efectivo.Location = new Point(785, 292);
+            btn_pago_efectivo.Location = new Point(826, 173);
             btn_pago_efectivo.Name = "btn_pago_efectivo";
-            btn_pago_efectivo.Size = new Size(182, 38);
+            btn_pago_efectivo.Size = new Size(141, 38);
             btn_pago_efectivo.TabIndex = 98;
             btn_pago_efectivo.Text = "EFECTIVO";
             btn_pago_efectivo.UseVisualStyleBackColor = true;
@@ -373,9 +400,9 @@
             // 
             // txb_pago_cliente
             // 
-            txb_pago_cliente.Location = new Point(718, 368);
+            txb_pago_cliente.Location = new Point(581, 206);
             txb_pago_cliente.Name = "txb_pago_cliente";
-            txb_pago_cliente.Size = new Size(249, 23);
+            txb_pago_cliente.Size = new Size(155, 23);
             txb_pago_cliente.TabIndex = 99;
             txb_pago_cliente.TextChanged += txb_pago_cliente_TextChanged;
             // 
@@ -385,7 +412,7 @@
             label8.Font = new Font("Agency FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = SystemColors.ControlLightLight;
             label8.Image = Properties.Resources.BG42;
-            label8.Location = new Point(593, 367);
+            label8.Location = new Point(581, 173);
             label8.Name = "label8";
             label8.Size = new Size(89, 20);
             label8.TabIndex = 100;
@@ -397,7 +424,7 @@
             label9.Font = new Font("Agency FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.FromArgb(255, 128, 128);
             label9.Image = Properties.Resources.BG41;
-            label9.Location = new Point(593, 432);
+            label9.Location = new Point(581, 251);
             label9.Name = "label9";
             label9.Size = new Size(52, 20);
             label9.TabIndex = 101;
@@ -409,7 +436,7 @@
             lbl_cambio_cliente.Font = new Font("Agency FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl_cambio_cliente.ForeColor = Color.FromArgb(255, 128, 128);
             lbl_cambio_cliente.Image = Properties.Resources.BG42;
-            lbl_cambio_cliente.Location = new Point(888, 432);
+            lbl_cambio_cliente.Location = new Point(657, 251);
             lbl_cambio_cliente.Name = "lbl_cambio_cliente";
             lbl_cambio_cliente.Size = new Size(79, 20);
             lbl_cambio_cliente.TabIndex = 102;
@@ -423,9 +450,9 @@
             btn_finalizar_compra.FlatStyle = FlatStyle.Flat;
             btn_finalizar_compra.Font = new Font("Agency FB", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_finalizar_compra.ForeColor = SystemColors.Window;
-            btn_finalizar_compra.Location = new Point(593, 476);
+            btn_finalizar_compra.Location = new Point(580, 297);
             btn_finalizar_compra.Name = "btn_finalizar_compra";
-            btn_finalizar_compra.Size = new Size(374, 38);
+            btn_finalizar_compra.Size = new Size(387, 38);
             btn_finalizar_compra.TabIndex = 103;
             btn_finalizar_compra.Text = "FINALIZAR COMPRA";
             btn_finalizar_compra.UseVisualStyleBackColor = false;

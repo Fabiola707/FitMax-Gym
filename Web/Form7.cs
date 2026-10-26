@@ -17,6 +17,15 @@ namespace Web//pantalla de venta de productos y descontardel stock
         {
             InitializeComponent();
             CargarProductos();
+            if (dtCarrito.Columns.Count == 0)
+            {
+                dtCarrito.Columns.Add("IdProducto", typeof(int));
+                dtCarrito.Columns.Add("Producto", typeof(string));
+                dtCarrito.Columns.Add("Precio", typeof(decimal));
+                dtCarrito.Columns.Add("Cantidad", typeof(int)); ;
+                dtCarrito.Columns.Add("Subtotal", typeof(decimal), "Precio * Cantidad");
+            }
+            dgv_compra.DataSource = dtCarrito;
         }
 
         private void btn_cerrar_sesion_Click(object sender, EventArgs e)
@@ -65,10 +74,25 @@ namespace Web//pantalla de venta de productos y descontardel stock
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (dtCarrito == null)//existencia tabla
+            {
+                dtCarrito = new DataTable();
+                dtCarrito.Columns.Add("IdProducto", typeof(int));
+                dtCarrito.Columns.Add("Producto", typeof(string));
+                dtCarrito.Columns.Add("Precio", typeof(decimal));
+                dtCarrito.Columns.Add("Cantidad", typeof(int));
+                dtCarrito.Columns.Add("Subtotal", typeof(decimal), "Precio * Cantidad");
+                dgv_compra.DataSource = dtCarrito;
+            }
             if (dgv_existencia.SelectedRows.Count == 0)//sin seleccion da aviso para seleccionar
 
             {
                 MessageBox.Show("Por favor, selecciona un producto de la lista.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txb_cantidad_productos.Text))
+            {
+                MessageBox.Show("Por favor, ingresa una cantidad.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             //camntidad mayor a 0
@@ -78,10 +102,11 @@ namespace Web//pantalla de venta de productos y descontardel stock
                 return;
             }
             DataGridViewRow filaSeleccionada = dgv_existencia.SelectedRows[0];
-            int idProducto = Convert.ToInt32(filaSeleccionada.Cells["ID"].Value); //ajuste
-            string nombreProducto = filaSeleccionada.Cells["Producto"].Value.ToString();
-            decimal precioUnitario = Convert.ToDecimal(filaSeleccionada.Cells["Precio"].Value);
-            int stockDisponible = Convert.ToInt32(filaSeleccionada.Cells["Stock"].Value);
+
+            int idProducto = Convert.ToInt32(filaSeleccionada.Cells[0].Value); //ajuste
+            string nombreProducto = filaSeleccionada.Cells[1].Value.ToString();
+            decimal precioUnitario = Convert.ToDecimal(filaSeleccionada.Cells[2].Value);
+            int stockDisponible = Convert.ToInt32(filaSeleccionada.Cells[3].Value);
 
             //coincidir con stock
             if (cantidadIngresada > stockDisponible)
@@ -108,7 +133,7 @@ namespace Web//pantalla de venta de productos y descontardel stock
                 }
                 if (!productoExiste)
                 {
-                    dtCarrito.Rows.Add(idProducto, nombreProducto, precioUnitario, cantidadIngresada);
+                    dtCarrito.Rows.Add(nombreProducto, precioUnitario, cantidadIngresada);//quité id
                 }
 
                 //total general
@@ -181,6 +206,8 @@ namespace Web//pantalla de venta de productos y descontardel stock
                             DataTable dt = new DataTable();
                             adaptador.Fill(dt);
                             dgv_existencia.DataSource = dt;
+                            dgv_existencia.Columns[0].Visible = false;
+                            //dgv_existencia.Columns[2].Visible = false;
                         }
                     }
                 }
@@ -215,7 +242,7 @@ namespace Web//pantalla de venta de productos y descontardel stock
                 lbl_mostrar_precio.Text = "$" + precio.ToString("0.00");//lbl de precio
             }
         }
-        private DataTable dtCarrito;
+        private DataTable dtCarrito= new DataTable();
 
         private void dgv_compra_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
