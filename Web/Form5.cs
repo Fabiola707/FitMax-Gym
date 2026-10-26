@@ -1,4 +1,5 @@
-﻿using FitMax.Models;
+﻿using FitMax;
+using FitMax.Models;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -7,17 +8,21 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-
+using Core;
 namespace Web
 {
     public partial class Form5 : Form
     {
-        private static string connectionString = @"Server=localhost;Port=3307;Database=FitMaxDB;Uid=root;Pwd=;paola05";
+        private static string connectionString = @"Server=localhost;Port=3306;Database=fitmaxDB;Uid=root;Pwd=19503236;";
         public Form5()
         {
             InitializeComponent();
+            CargarTablaEmpleados();
         }
-
+        private void Form_Load(object sender, EventArgs e)
+        {
+            CargarTablaEmpleados();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             string nombre = tbx_nombre_empleado.Text.Trim();
@@ -25,7 +30,7 @@ namespace Web
             string password = tbx_empleado_contraseña.Text.Trim();
             string puesto = "";
 
-            // Verificamos cuál RadioButton está seleccionado
+            // Verificamos que cbtx está seleccionado
             if (cbx_administrador.Checked)
             {
                 puesto = "Administrador";
@@ -48,7 +53,7 @@ namespace Web
                 return;
             }
 
-            string query = "INSERT INTO usuarios (nombre, username, password, puesto) " +
+            string query = "INSERT INTO usuarios (nombre, NombreUsuario, password, puesto) " +
                            "VALUES (@nombre, @usuario, @password, @puesto)";
 
             try
@@ -92,7 +97,7 @@ namespace Web
 
         private void CargarEmpleados()
         {
-            string query = "SELECT nombre, username, puesto FROM usuarios";
+            string query = "SELECT nombre, NombreUsuario, puesto FROM usuarios";
 
             try
             {
@@ -169,6 +174,58 @@ namespace Web
         private void btn_contabilidad_Click(object sender, EventArgs e)
         {
 
+        }
+        private void CargarTablaEmpleados()
+        {
+            try
+            {
+                using (MySqlConnection conexion = ConexionBD.ObtenerConexion())
+                {
+                    conexion.Open();
+                    string consulta = @"
+                SELECT 
+                    IdUsuario AS 'ID', Nombre AS 'Nombre',
+                    NombreUsuario AS 'Usuario', 
+                    Rol AS 'Rol', 
+                    Activo AS 'Estado'
+                FROM fitmaxdb.usuarios";
+
+                    using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
+                    {
+                        using (MySqlDataAdapter adaptador = new MySqlDataAdapter(comando))
+                        {
+                            DataTable dt = new DataTable();
+                            adaptador.Fill(dt);
+                            dataGridView1.DataSource = dt;
+
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+            "Error al cargar los empleados: " + ex.Message,
+            "Error",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Error);
+            }
+        }
+
+
+
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //CargarTablaEmpleados();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            this.Hide();
+            form2.Show();
         }
     }
 }

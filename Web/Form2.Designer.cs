@@ -29,11 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             pictureBox1 = new PictureBox();
             label1 = new Label();
             btn_inicio = new Button();
             btn_clientes = new Button();
-            btn_contabilidad = new Button();
             btn_db_empleados = new Button();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
@@ -56,7 +60,8 @@
             pictureBox7 = new PictureBox();
             pictureBox8 = new PictureBox();
             label7 = new Label();
-            btn_registro_nuevo_producto = new Button();
+            button1 = new Button();
+            dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -65,6 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -84,7 +90,7 @@
             label1.Font = new Font("Agency FB", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Red;
             label1.Image = Properties.Resources.BG4;
-            label1.Location = new Point(25, 178);
+            label1.Location = new Point(25, 115);
             label1.Name = "label1";
             label1.Size = new Size(108, 31);
             label1.TabIndex = 1;
@@ -115,29 +121,13 @@
             btn_clientes.FlatStyle = FlatStyle.Flat;
             btn_clientes.Font = new Font("Agency FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_clientes.ForeColor = SystemColors.AppWorkspace;
-            btn_clientes.Location = new Point(0, 329);
+            btn_clientes.Location = new Point(0, 297);
             btn_clientes.Name = "btn_clientes";
             btn_clientes.Size = new Size(161, 28);
             btn_clientes.TabIndex = 3;
             btn_clientes.Text = "CLIENTES";
             btn_clientes.UseVisualStyleBackColor = false;
             btn_clientes.Click += button2_Click;
-            // 
-            // btn_contabilidad
-            // 
-            btn_contabilidad.BackColor = Color.FromArgb(64, 64, 64);
-            btn_contabilidad.BackgroundImage = Properties.Resources.BG4;
-            btn_contabilidad.FlatAppearance.BorderSize = 0;
-            btn_contabilidad.FlatStyle = FlatStyle.Flat;
-            btn_contabilidad.Font = new Font("Agency FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_contabilidad.ForeColor = SystemColors.AppWorkspace;
-            btn_contabilidad.Location = new Point(0, 296);
-            btn_contabilidad.Margin = new Padding(3, 2, 3, 2);
-            btn_contabilidad.Name = "btn_contabilidad";
-            btn_contabilidad.Size = new Size(161, 28);
-            btn_contabilidad.TabIndex = 6;
-            btn_contabilidad.Text = "PAGOS";
-            btn_contabilidad.UseVisualStyleBackColor = false;
             // 
             // btn_db_empleados
             // 
@@ -175,6 +165,7 @@
             pictureBox3.Size = new Size(204, 98);
             pictureBox3.TabIndex = 9;
             pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
             // 
             // pictureBox4
             // 
@@ -202,7 +193,7 @@
             pictureBox6.Location = new Point(192, 197);
             pictureBox6.Margin = new Padding(3, 2, 3, 2);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(328, 326);
+            pictureBox6.Size = new Size(328, 366);
             pictureBox6.TabIndex = 12;
             pictureBox6.TabStop = false;
             // 
@@ -243,7 +234,7 @@
             btn_registrar_nueva_venta.FlatStyle = FlatStyle.Flat;
             btn_registrar_nueva_venta.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_registrar_nueva_venta.ForeColor = SystemColors.AppWorkspace;
-            btn_registrar_nueva_venta.Location = new Point(221, 323);
+            btn_registrar_nueva_venta.Location = new Point(221, 339);
             btn_registrar_nueva_venta.Margin = new Padding(3, 2, 3, 2);
             btn_registrar_nueva_venta.Name = "btn_registrar_nueva_venta";
             btn_registrar_nueva_venta.Size = new Size(267, 41);
@@ -311,13 +302,14 @@
             btn_actualizar_membresia.FlatStyle = FlatStyle.Flat;
             btn_actualizar_membresia.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_actualizar_membresia.ForeColor = SystemColors.AppWorkspace;
-            btn_actualizar_membresia.Location = new Point(221, 383);
+            btn_actualizar_membresia.Location = new Point(221, 415);
             btn_actualizar_membresia.Margin = new Padding(3, 2, 3, 2);
             btn_actualizar_membresia.Name = "btn_actualizar_membresia";
             btn_actualizar_membresia.Size = new Size(267, 41);
             btn_actualizar_membresia.TabIndex = 20;
             btn_actualizar_membresia.Text = "RENOVAR MEMBRESIA                                   >";
             btn_actualizar_membresia.UseVisualStyleBackColor = true;
+            btn_actualizar_membresia.Click += btn_actualizar_membresia_Click;
             // 
             // lbl_stock
             // 
@@ -366,6 +358,7 @@
             lbl_miembros_activos.Size = new Size(42, 31);
             lbl_miembros_activos.TabIndex = 24;
             lbl_miembros_activos.Text = "----";
+            lbl_miembros_activos.Click += lbl_miembros_activos_Click;
             // 
             // btn_cerrar_sesion
             // 
@@ -385,7 +378,7 @@
             // pictureBox7
             // 
             pictureBox7.BackgroundImage = (Image)resources.GetObject("pictureBox7.BackgroundImage");
-            pictureBox7.Location = new Point(25, 66);
+            pictureBox7.Location = new Point(25, 12);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(110, 100);
             pictureBox7.TabIndex = 26;
@@ -397,7 +390,7 @@
             pictureBox8.Location = new Point(579, 197);
             pictureBox8.Margin = new Padding(3, 2, 3, 2);
             pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(444, 326);
+            pictureBox8.Size = new Size(444, 366);
             pictureBox8.TabIndex = 27;
             pictureBox8.TabStop = false;
             // 
@@ -414,21 +407,67 @@
             label7.TabIndex = 28;
             label7.Text = "RESUMEN DE INVENTARIO";
             // 
-            // btn_registro_nuevo_producto
+            // button1
             // 
-            btn_registro_nuevo_producto.BackgroundImage = (Image)resources.GetObject("btn_registro_nuevo_producto.BackgroundImage");
-            btn_registro_nuevo_producto.FlatAppearance.BorderSize = 0;
-            btn_registro_nuevo_producto.FlatStyle = FlatStyle.Flat;
-            btn_registro_nuevo_producto.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_registro_nuevo_producto.ForeColor = SystemColors.AppWorkspace;
-            btn_registro_nuevo_producto.Location = new Point(221, 441);
-            btn_registro_nuevo_producto.Margin = new Padding(3, 2, 3, 2);
-            btn_registro_nuevo_producto.Name = "btn_registro_nuevo_producto";
-            btn_registro_nuevo_producto.Size = new Size(267, 41);
-            btn_registro_nuevo_producto.TabIndex = 29;
-            btn_registro_nuevo_producto.Text = "AGREGAR NUEVO PRODUCTO A STOCK               >";
-            btn_registro_nuevo_producto.UseVisualStyleBackColor = true;
-            btn_registro_nuevo_producto.Click += button1_Click_1;
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.AppWorkspace;
+            button1.Location = new Point(221, 492);
+            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(267, 41);
+            button1.TabIndex = 30;
+            button1.Text = "ERRORES                                                          >";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_2;
+            // 
+            // dataGridView1
+            // 
+            dataGridViewCellStyle1.BackColor = Color.Black;
+            dataGridViewCellStyle1.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Red;
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.BackgroundColor = Color.FromArgb(64, 64, 64);
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Red;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.InfoText;
+            dataGridViewCellStyle3.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Red;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView1.GridColor = Color.Black;
+            dataGridView1.Location = new Point(579, 264);
+            dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.Black;
+            dataGridViewCellStyle4.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = Color.Red;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.BackColor = Color.Black;
+            dataGridViewCellStyle5.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.Red;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridView1.Size = new Size(444, 299);
+            dataGridView1.TabIndex = 31;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Form2
             // 
@@ -436,7 +475,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(1063, 575);
-            Controls.Add(btn_registro_nuevo_producto);
+            Controls.Add(dataGridView1);
+            Controls.Add(button1);
             Controls.Add(label7);
             Controls.Add(pictureBox8);
             Controls.Add(pictureBox7);
@@ -459,7 +499,6 @@
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(btn_db_empleados);
-            Controls.Add(btn_contabilidad);
             Controls.Add(btn_clientes);
             Controls.Add(btn_inicio);
             Controls.Add(label1);
@@ -474,6 +513,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -484,7 +524,6 @@
         private Label label1;
         private Button btn_inicio;
         private Button btn_clientes;
-        private Button btn_contabilidad;
         private Button btn_db_empleados;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
@@ -507,6 +546,7 @@
         private PictureBox pictureBox7;
         private PictureBox pictureBox8;
         private Label label7;
-        private Button btn_registro_nuevo_producto;
+        private Button button1;
+        private DataGridView dataGridView1;
     }
 }

@@ -38,12 +38,10 @@
             textBox2 = new TextBox();
             textBox1 = new TextBox();
             textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
             btn_registrar_cliente = new Button();
             btn_cancelar = new Button();
             btn_Elite = new Button();
-            btnLegenda = new Button();
+            btn_leyenda = new Button();
             btn_Titan = new Button();
             label4 = new Label();
             label5 = new Label();
@@ -62,10 +60,11 @@
             label14 = new Label();
             btn_inicio = new Button();
             btn_db_empleados = new Button();
-            btn_contabilidad = new Button();
             btn_clientes = new Button();
             pictureBox7 = new PictureBox();
             btn_cerrar_sesion = new Button();
+            dtp_inicio_membresia = new DateTimePicker();
+            dtp_fin_membresia = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -89,17 +88,17 @@
             pictureBox2.Location = new Point(248, 49);
             pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(662, 166);
+            pictureBox2.Size = new Size(662, 148);
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
             pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
-            pictureBox3.Location = new Point(248, 219);
+            pictureBox3.Location = new Point(248, 201);
             pictureBox3.Margin = new Padding(3, 2, 3, 2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(662, 166);
+            pictureBox3.Size = new Size(662, 147);
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
             pictureBox3.Click += pictureBox3_Click;
@@ -135,7 +134,7 @@
             label3.Font = new Font("Agency FB", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(255, 128, 128);
             label3.Image = Properties.Resources.BG4;
-            label3.Location = new Point(729, 235);
+            label3.Location = new Point(729, 214);
             label3.Name = "label3";
             label3.Size = new Size(156, 24);
             label3.TabIndex = 5;
@@ -146,52 +145,35 @@
             // 
             textBox2.BackColor = Color.Black;
             textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Location = new Point(595, 169);
+            textBox2.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox2.ForeColor = SystemColors.Window;
+            textBox2.Location = new Point(595, 151);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(290, 23);
+            textBox2.Size = new Size(290, 25);
             textBox2.TabIndex = 7;
             // 
             // textBox1
             // 
             textBox1.BackColor = Color.Black;
             textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Location = new Point(274, 169);
+            textBox1.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.ForeColor = SystemColors.Window;
+            textBox1.Location = new Point(274, 151);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(290, 23);
+            textBox1.Size = new Size(290, 25);
             textBox1.TabIndex = 8;
             // 
             // textBox3
             // 
             textBox3.BackColor = Color.Black;
             textBox3.BorderStyle = BorderStyle.FixedSingle;
-            textBox3.Location = new Point(274, 114);
+            textBox3.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox3.ForeColor = SystemColors.Window;
+            textBox3.Location = new Point(274, 104);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(290, 23);
+            textBox3.Size = new Size(290, 25);
             textBox3.TabIndex = 9;
-            // 
-            // textBox4
-            // 
-            textBox4.BackColor = Color.Black;
-            textBox4.BorderStyle = BorderStyle.FixedSingle;
-            textBox4.Font = new Font("Agency FB", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox4.ForeColor = Color.FromArgb(64, 64, 64);
-            textBox4.Location = new Point(274, 336);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(290, 25);
-            textBox4.TabIndex = 10;
-            textBox4.Text = "DD/MM/AAAA";
-            // 
-            // textBox5
-            // 
-            textBox5.BackColor = Color.Black;
-            textBox5.BorderStyle = BorderStyle.FixedSingle;
-            textBox5.Font = new Font("Agency FB", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox5.ForeColor = Color.FromArgb(64, 64, 64);
-            textBox5.Location = new Point(595, 336);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(290, 25);
-            textBox5.TabIndex = 11;
-            textBox5.Text = "DD/MM/AAAA";
+            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // btn_registrar_cliente
             // 
@@ -206,7 +188,7 @@
             btn_registrar_cliente.TabIndex = 12;
             btn_registrar_cliente.Text = "REGISTRAR CLIENTE                                                     >";
             btn_registrar_cliente.UseVisualStyleBackColor = false;
-            btn_registrar_cliente.Click += button1_Click;
+            btn_registrar_cliente.Click += btn_registrar_cliente_Click;
             // 
             // btn_cancelar
             // 
@@ -229,26 +211,27 @@
             btn_Elite.FlatStyle = FlatStyle.Flat;
             btn_Elite.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_Elite.ForeColor = SystemColors.ButtonHighlight;
-            btn_Elite.Location = new Point(274, 276);
+            btn_Elite.Location = new Point(274, 241);
             btn_Elite.Name = "btn_Elite";
             btn_Elite.Size = new Size(189, 38);
             btn_Elite.TabIndex = 14;
             btn_Elite.Text = "ELITE";
             btn_Elite.UseVisualStyleBackColor = true;
-            btn_Elite.Click += button3_Click;
+            btn_Elite.Click += btn_Elite_Click;
             // 
-            // btnLegenda
+            // btn_leyenda
             // 
-            btnLegenda.BackgroundImage = Properties.Resources.BG41;
-            btnLegenda.FlatStyle = FlatStyle.Flat;
-            btnLegenda.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnLegenda.ForeColor = SystemColors.ButtonHighlight;
-            btnLegenda.Location = new Point(696, 276);
-            btnLegenda.Name = "btnLegenda";
-            btnLegenda.Size = new Size(189, 38);
-            btnLegenda.TabIndex = 15;
-            btnLegenda.Text = "LEGENDA";
-            btnLegenda.UseVisualStyleBackColor = true;
+            btn_leyenda.BackgroundImage = Properties.Resources.BG41;
+            btn_leyenda.FlatStyle = FlatStyle.Flat;
+            btn_leyenda.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_leyenda.ForeColor = SystemColors.ButtonHighlight;
+            btn_leyenda.Location = new Point(696, 241);
+            btn_leyenda.Name = "btn_leyenda";
+            btn_leyenda.Size = new Size(189, 38);
+            btn_leyenda.TabIndex = 15;
+            btn_leyenda.Text = "LEGENDA";
+            btn_leyenda.UseVisualStyleBackColor = true;
+            btn_leyenda.Click += btn_leyenda_Click;
             // 
             // btn_Titan
             // 
@@ -256,13 +239,13 @@
             btn_Titan.FlatStyle = FlatStyle.Flat;
             btn_Titan.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_Titan.ForeColor = SystemColors.ButtonHighlight;
-            btn_Titan.Location = new Point(485, 276);
+            btn_Titan.Location = new Point(484, 241);
             btn_Titan.Name = "btn_Titan";
             btn_Titan.Size = new Size(189, 38);
             btn_Titan.TabIndex = 16;
             btn_Titan.Text = "TITÁN";
             btn_Titan.UseVisualStyleBackColor = true;
-            btn_Titan.Click += button5_Click;
+            btn_Titan.Click += btn_Titan_Click;
             // 
             // label4
             // 
@@ -270,7 +253,7 @@
             label4.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.ButtonFace;
             label4.Image = Properties.Resources.BG41;
-            label4.Location = new Point(274, 150);
+            label4.Location = new Point(274, 130);
             label4.Name = "label4";
             label4.Size = new Size(103, 18);
             label4.TabIndex = 17;
@@ -283,7 +266,7 @@
             label5.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = SystemColors.ButtonHighlight;
             label5.Image = Properties.Resources.BG41;
-            label5.Location = new Point(274, 96);
+            label5.Location = new Point(274, 83);
             label5.Name = "label5";
             label5.Size = new Size(49, 18);
             label5.TabIndex = 18;
@@ -294,9 +277,11 @@
             // 
             textBox6.BackColor = Color.Black;
             textBox6.BorderStyle = BorderStyle.FixedSingle;
-            textBox6.Location = new Point(595, 114);
+            textBox6.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox6.ForeColor = SystemColors.Window;
+            textBox6.Location = new Point(595, 104);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(290, 23);
+            textBox6.Size = new Size(290, 25);
             textBox6.TabIndex = 19;
             // 
             // label6
@@ -305,7 +290,7 @@
             label6.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = SystemColors.ButtonHighlight;
             label6.Image = Properties.Resources.BG41;
-            label6.Location = new Point(595, 96);
+            label6.Location = new Point(595, 83);
             label6.Name = "label6";
             label6.Size = new Size(55, 18);
             label6.TabIndex = 20;
@@ -318,7 +303,7 @@
             label7.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = SystemColors.ButtonHighlight;
             label7.Image = Properties.Resources.BG41;
-            label7.Location = new Point(595, 150);
+            label7.Location = new Point(595, 130);
             label7.Name = "label7";
             label7.Size = new Size(105, 18);
             label7.TabIndex = 21;
@@ -331,7 +316,7 @@
             label8.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = SystemColors.ButtonHighlight;
             label8.Image = Properties.Resources.BG41;
-            label8.Location = new Point(274, 317);
+            label8.Location = new Point(274, 282);
             label8.Name = "label8";
             label8.Size = new Size(127, 18);
             label8.TabIndex = 22;
@@ -344,7 +329,7 @@
             label9.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.ForeColor = SystemColors.ButtonHighlight;
             label9.Image = Properties.Resources.BG41;
-            label9.Location = new Point(595, 317);
+            label9.Location = new Point(595, 282);
             label9.Name = "label9";
             label9.Size = new Size(126, 18);
             label9.TabIndex = 23;
@@ -357,7 +342,7 @@
             label10.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.ForeColor = SystemColors.ButtonHighlight;
             label10.Image = Properties.Resources.BG41;
-            label10.Location = new Point(274, 245);
+            label10.Location = new Point(274, 220);
             label10.Name = "label10";
             label10.Size = new Size(93, 18);
             label10.TabIndex = 24;
@@ -367,7 +352,7 @@
             // pictureBox4
             // 
             pictureBox4.BackgroundImage = Properties.Resources.BG4;
-            pictureBox4.Location = new Point(248, 390);
+            pictureBox4.Location = new Point(248, 353);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(662, 112);
             pictureBox4.TabIndex = 25;
@@ -379,7 +364,7 @@
             label11.Font = new Font("Agency FB", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.FromArgb(255, 128, 128);
             label11.Image = Properties.Resources.BG41;
-            label11.Location = new Point(725, 403);
+            label11.Location = new Point(725, 366);
             label11.Name = "label11";
             label11.Size = new Size(160, 24);
             label11.TabIndex = 26;
@@ -392,7 +377,7 @@
             textBox7.BorderStyle = BorderStyle.FixedSingle;
             textBox7.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox7.ForeColor = Color.White;
-            textBox7.Location = new Point(274, 457);
+            textBox7.Location = new Point(274, 393);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(290, 25);
             textBox7.TabIndex = 27;
@@ -403,7 +388,7 @@
             textBox8.BorderStyle = BorderStyle.FixedSingle;
             textBox8.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox8.ForeColor = SystemColors.Window;
-            textBox8.Location = new Point(595, 457);
+            textBox8.Location = new Point(595, 393);
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(290, 25);
             textBox8.TabIndex = 28;
@@ -414,7 +399,7 @@
             label12.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label12.ForeColor = Color.White;
             label12.Image = Properties.Resources.BG41;
-            label12.Location = new Point(274, 436);
+            label12.Location = new Point(274, 372);
             label12.Name = "label12";
             label12.Size = new Size(54, 18);
             label12.TabIndex = 29;
@@ -427,7 +412,7 @@
             label13.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label13.ForeColor = Color.White;
             label13.Image = Properties.Resources.BG42;
-            label13.Location = new Point(595, 437);
+            label13.Location = new Point(595, 372);
             label13.Name = "label13";
             label13.Size = new Size(78, 18);
             label13.TabIndex = 30;
@@ -441,7 +426,7 @@
             label14.Font = new Font("Agency FB", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label14.ForeColor = Color.Red;
             label14.Image = Properties.Resources.BG4;
-            label14.Location = new Point(26, 184);
+            label14.Location = new Point(26, 119);
             label14.Name = "label14";
             label14.Size = new Size(108, 31);
             label14.TabIndex = 31;
@@ -481,22 +466,6 @@
             btn_db_empleados.UseVisualStyleBackColor = false;
             btn_db_empleados.Click += btn_db_empleados_Click;
             // 
-            // btn_contabilidad
-            // 
-            btn_contabilidad.BackColor = Color.FromArgb(64, 64, 64);
-            btn_contabilidad.BackgroundImage = Properties.Resources.BG4;
-            btn_contabilidad.FlatAppearance.BorderSize = 0;
-            btn_contabilidad.FlatStyle = FlatStyle.Flat;
-            btn_contabilidad.Font = new Font("Agency FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_contabilidad.ForeColor = SystemColors.AppWorkspace;
-            btn_contabilidad.Location = new Point(-1, 300);
-            btn_contabilidad.Margin = new Padding(3, 2, 3, 2);
-            btn_contabilidad.Name = "btn_contabilidad";
-            btn_contabilidad.Size = new Size(161, 28);
-            btn_contabilidad.TabIndex = 34;
-            btn_contabilidad.Text = "PAGOS";
-            btn_contabilidad.UseVisualStyleBackColor = false;
-            // 
             // btn_clientes
             // 
             btn_clientes.BackColor = Color.FromArgb(64, 64, 64);
@@ -505,7 +474,7 @@
             btn_clientes.FlatStyle = FlatStyle.Flat;
             btn_clientes.Font = new Font("Agency FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_clientes.ForeColor = SystemColors.AppWorkspace;
-            btn_clientes.Location = new Point(-1, 333);
+            btn_clientes.Location = new Point(-1, 301);
             btn_clientes.Name = "btn_clientes";
             btn_clientes.Size = new Size(161, 28);
             btn_clientes.TabIndex = 35;
@@ -516,7 +485,7 @@
             // pictureBox7
             // 
             pictureBox7.BackgroundImage = (Image)resources.GetObject("pictureBox7.BackgroundImage");
-            pictureBox7.Location = new Point(26, 65);
+            pictureBox7.Location = new Point(26, 12);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(110, 100);
             pictureBox7.TabIndex = 37;
@@ -537,16 +506,31 @@
             btn_cerrar_sesion.UseVisualStyleBackColor = false;
             btn_cerrar_sesion.Click += btn_cerrar_sesion_Click;
             // 
+            // dtp_inicio_membresia
+            // 
+            dtp_inicio_membresia.Location = new Point(274, 305);
+            dtp_inicio_membresia.Name = "dtp_inicio_membresia";
+            dtp_inicio_membresia.Size = new Size(290, 23);
+            dtp_inicio_membresia.TabIndex = 39;
+            // 
+            // dtp_fin_membresia
+            // 
+            dtp_fin_membresia.Location = new Point(595, 305);
+            dtp_fin_membresia.Name = "dtp_fin_membresia";
+            dtp_fin_membresia.Size = new Size(290, 23);
+            dtp_fin_membresia.TabIndex = 40;
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1017, 574);
+            Controls.Add(dtp_fin_membresia);
+            Controls.Add(dtp_inicio_membresia);
             Controls.Add(btn_cerrar_sesion);
             Controls.Add(pictureBox7);
             Controls.Add(btn_clientes);
-            Controls.Add(btn_contabilidad);
             Controls.Add(btn_db_empleados);
             Controls.Add(btn_inicio);
             Controls.Add(label14);
@@ -565,12 +549,10 @@
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(btn_Titan);
-            Controls.Add(btnLegenda);
+            Controls.Add(btn_leyenda);
             Controls.Add(btn_Elite);
             Controls.Add(btn_cancelar);
             Controls.Add(btn_registrar_cliente);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
             Controls.Add(textBox3);
             Controls.Add(textBox1);
             Controls.Add(textBox2);
@@ -603,12 +585,10 @@
         private TextBox textBox2;
         private TextBox textBox1;
         private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
         private Button btn_registrar_cliente;
         private Button btn_cancelar;
         private Button btn_Elite;
-        private Button btnLegenda;
+        private Button btn_leyenda;
         private Button btn_Titan;
         private Label label4;
         private Label label5;
@@ -627,9 +607,10 @@
         private Label label14;
         private Button btn_inicio;
         private Button btn_db_empleados;
-        private Button btn_contabilidad;
         private Button btn_clientes;
         private PictureBox pictureBox7;
         private Button btn_cerrar_sesion;
+        private DateTimePicker dtp_inicio_membresia;
+        private DateTimePicker dtp_fin_membresia;
     }
 }

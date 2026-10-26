@@ -7,8 +7,8 @@ namespace FitMax
 {
     public class ConexionBD
     {
-        private static string cadenaConexion =
-            "Server=localhost;Port=3307;Database=FitMaxDB;Uid=root;Pwd=;paola05";
+        public static string cadenaConexion =
+            "Server=localhost;Port=3306;Database=fitmaxDB;Uid=root;Pwd=19503236;";
 
         public static MySqlConnection ObtenerConexion()
         {

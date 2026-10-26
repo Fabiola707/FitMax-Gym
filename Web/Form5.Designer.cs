@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             pictureBox1 = new PictureBox();
             pictureBox7 = new PictureBox();
             pictureBox2 = new PictureBox();
@@ -45,17 +50,19 @@
             label6 = new Label();
             btn_inicio = new Button();
             btn_db_empleados = new Button();
-            btn_contabilidad = new Button();
             btn_clientes = new Button();
             btn_cerrar_sesion = new Button();
             cbx_administrador = new CheckBox();
             cbx_cajero = new CheckBox();
             cbx_entrenador = new CheckBox();
             label14 = new Label();
+            dataGridView1 = new DataGridView();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -71,7 +78,7 @@
             // pictureBox7
             // 
             pictureBox7.BackgroundImage = (Image)resources.GetObject("pictureBox7.BackgroundImage");
-            pictureBox7.Location = new Point(22, 77);
+            pictureBox7.Location = new Point(22, 12);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(110, 100);
             pictureBox7.TabIndex = 50;
@@ -91,12 +98,12 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Black;
             label1.Cursor = Cursors.IBeam;
-            label1.Font = new Font("Agency FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Agency FB", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(255, 128, 128);
             label1.Image = Properties.Resources.BG5;
-            label1.Location = new Point(246, 56);
+            label1.Location = new Point(816, 64);
             label1.Name = "label1";
-            label1.Size = new Size(96, 20);
+            label1.Size = new Size(124, 25);
             label1.TabIndex = 52;
             label1.Text = "NUEVO EMPLEADO";
             // 
@@ -106,7 +113,7 @@
             tbx_nombre_empleado.BorderStyle = BorderStyle.FixedSingle;
             tbx_nombre_empleado.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbx_nombre_empleado.ForeColor = SystemColors.Window;
-            tbx_nombre_empleado.Location = new Point(246, 105);
+            tbx_nombre_empleado.Location = new Point(246, 92);
             tbx_nombre_empleado.Name = "tbx_nombre_empleado";
             tbx_nombre_empleado.Size = new Size(316, 26);
             tbx_nombre_empleado.TabIndex = 53;
@@ -118,7 +125,7 @@
             tbx_empleado_contraseña.BorderStyle = BorderStyle.FixedSingle;
             tbx_empleado_contraseña.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbx_empleado_contraseña.ForeColor = SystemColors.Window;
-            tbx_empleado_contraseña.Location = new Point(622, 151);
+            tbx_empleado_contraseña.Location = new Point(622, 146);
             tbx_empleado_contraseña.Name = "tbx_empleado_contraseña";
             tbx_empleado_contraseña.Size = new Size(290, 26);
             tbx_empleado_contraseña.TabIndex = 54;
@@ -130,7 +137,7 @@
             tbx_usuario_empleado.BorderStyle = BorderStyle.FixedSingle;
             tbx_usuario_empleado.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbx_usuario_empleado.ForeColor = SystemColors.Window;
-            tbx_usuario_empleado.Location = new Point(622, 105);
+            tbx_usuario_empleado.Location = new Point(622, 92);
             tbx_usuario_empleado.Name = "tbx_usuario_empleado";
             tbx_usuario_empleado.Size = new Size(290, 26);
             tbx_usuario_empleado.TabIndex = 55;
@@ -143,7 +150,7 @@
             btn_agregar_empleado.FlatStyle = FlatStyle.Flat;
             btn_agregar_empleado.Font = new Font("Agency FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_agregar_empleado.ForeColor = SystemColors.ControlLightLight;
-            btn_agregar_empleado.Location = new Point(622, 200);
+            btn_agregar_empleado.Location = new Point(622, 197);
             btn_agregar_empleado.Name = "btn_agregar_empleado";
             btn_agregar_empleado.Size = new Size(290, 45);
             btn_agregar_empleado.TabIndex = 57;
@@ -157,7 +164,7 @@
             label2.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Image = Properties.Resources.BG5;
-            label2.Location = new Point(246, 77);
+            label2.Location = new Point(246, 69);
             label2.Name = "label2";
             label2.Size = new Size(46, 20);
             label2.TabIndex = 58;
@@ -169,7 +176,7 @@
             label3.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.ButtonHighlight;
             label3.Image = Properties.Resources.BG5;
-            label3.Location = new Point(622, 77);
+            label3.Location = new Point(622, 69);
             label3.Name = "label3";
             label3.Size = new Size(47, 20);
             label3.TabIndex = 59;
@@ -180,7 +187,7 @@
             label4.AutoSize = true;
             label4.ForeColor = SystemColors.ButtonHighlight;
             label4.Image = Properties.Resources.BG5;
-            label4.Location = new Point(622, 134);
+            label4.Location = new Point(622, 121);
             label4.Name = "label4";
             label4.Size = new Size(84, 15);
             label4.TabIndex = 60;
@@ -192,7 +199,7 @@
             label5.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = SystemColors.ButtonHighlight;
             label5.Image = Properties.Resources.BG5;
-            label5.Location = new Point(246, 148);
+            label5.Location = new Point(246, 130);
             label5.Name = "label5";
             label5.Size = new Size(50, 20);
             label5.TabIndex = 61;
@@ -201,9 +208,9 @@
             // pictureBox3
             // 
             pictureBox3.BackgroundImage = Properties.Resources.BG5;
-            pictureBox3.Location = new Point(220, 296);
+            pictureBox3.Location = new Point(400, 298);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(732, 231);
+            pictureBox3.Size = new Size(552, 231);
             pictureBox3.TabIndex = 62;
             pictureBox3.TabStop = false;
             // 
@@ -212,12 +219,12 @@
             label6.AutoSize = true;
             label6.BackColor = Color.Black;
             label6.Cursor = Cursors.IBeam;
-            label6.Font = new Font("Agency FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Font = new Font("Agency FB", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(255, 128, 128);
             label6.Image = Properties.Resources.BG5;
-            label6.Location = new Point(246, 315);
+            label6.Location = new Point(853, 316);
             label6.Name = "label6";
-            label6.Size = new Size(67, 20);
+            label6.Size = new Size(87, 25);
             label6.TabIndex = 63;
             label6.Text = "EMPLEADOS";
             // 
@@ -254,23 +261,6 @@
             btn_db_empleados.UseVisualStyleBackColor = false;
             btn_db_empleados.Click += btn_db_empleados_Click;
             // 
-            // btn_contabilidad
-            // 
-            btn_contabilidad.BackColor = Color.FromArgb(64, 64, 64);
-            btn_contabilidad.BackgroundImage = Properties.Resources.BG4;
-            btn_contabilidad.FlatAppearance.BorderSize = 0;
-            btn_contabilidad.FlatStyle = FlatStyle.Flat;
-            btn_contabilidad.Font = new Font("Agency FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_contabilidad.ForeColor = SystemColors.AppWorkspace;
-            btn_contabilidad.Location = new Point(1, 298);
-            btn_contabilidad.Margin = new Padding(3, 2, 3, 2);
-            btn_contabilidad.Name = "btn_contabilidad";
-            btn_contabilidad.Size = new Size(161, 28);
-            btn_contabilidad.TabIndex = 66;
-            btn_contabilidad.Text = "PAGOS";
-            btn_contabilidad.UseVisualStyleBackColor = false;
-            btn_contabilidad.Click += btn_contabilidad_Click;
-            // 
             // btn_clientes
             // 
             btn_clientes.BackColor = Color.FromArgb(64, 64, 64);
@@ -279,7 +269,7 @@
             btn_clientes.FlatStyle = FlatStyle.Flat;
             btn_clientes.Font = new Font("Agency FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_clientes.ForeColor = SystemColors.AppWorkspace;
-            btn_clientes.Location = new Point(1, 331);
+            btn_clientes.Location = new Point(1, 299);
             btn_clientes.Name = "btn_clientes";
             btn_clientes.Size = new Size(161, 28);
             btn_clientes.TabIndex = 67;
@@ -308,7 +298,7 @@
             cbx_administrador.BackgroundImage = Properties.Resources.BG5;
             cbx_administrador.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbx_administrador.ForeColor = SystemColors.ButtonHighlight;
-            cbx_administrador.Location = new Point(246, 178);
+            cbx_administrador.Location = new Point(246, 164);
             cbx_administrador.Name = "cbx_administrador";
             cbx_administrador.Size = new Size(100, 24);
             cbx_administrador.TabIndex = 69;
@@ -322,7 +312,7 @@
             cbx_cajero.BackgroundImage = Properties.Resources.BG5;
             cbx_cajero.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbx_cajero.ForeColor = SystemColors.ButtonHighlight;
-            cbx_cajero.Location = new Point(246, 208);
+            cbx_cajero.Location = new Point(246, 194);
             cbx_cajero.Name = "cbx_cajero";
             cbx_cajero.Size = new Size(63, 24);
             cbx_cajero.TabIndex = 70;
@@ -335,7 +325,7 @@
             cbx_entrenador.BackgroundImage = Properties.Resources.BG5;
             cbx_entrenador.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbx_entrenador.ForeColor = SystemColors.ButtonHighlight;
-            cbx_entrenador.Location = new Point(246, 233);
+            cbx_entrenador.Location = new Point(246, 224);
             cbx_entrenador.Name = "cbx_entrenador";
             cbx_entrenador.Size = new Size(86, 24);
             cbx_entrenador.TabIndex = 71;
@@ -349,11 +339,74 @@
             label14.Font = new Font("Agency FB", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label14.ForeColor = Color.Red;
             label14.Image = Properties.Resources.BG4;
-            label14.Location = new Point(22, 187);
+            label14.Location = new Point(22, 115);
             label14.Name = "label14";
             label14.Size = new Size(108, 31);
             label14.TabIndex = 72;
             label14.Text = "FITMAX GYM";
+            // 
+            // dataGridView1
+            // 
+            dataGridViewCellStyle1.BackColor = Color.Black;
+            dataGridViewCellStyle1.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Red;
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.BackgroundColor = Color.FromArgb(64, 64, 64);
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Black;
+            dataGridViewCellStyle2.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Red;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.Black;
+            dataGridViewCellStyle3.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Red;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView1.GridColor = SystemColors.MenuText;
+            dataGridView1.Location = new Point(424, 344);
+            dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.Black;
+            dataGridViewCellStyle4.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = Color.Red;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.BackColor = Color.Black;
+            dataGridViewCellStyle5.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.Red;
+            dataGridViewCellStyle5.SelectionForeColor = Color.White;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridView1.Size = new Size(516, 145);
+            dataGridView1.TabIndex = 73;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Red;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Agency FB", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(220, 298);
+            button1.Name = "button1";
+            button1.Size = new Size(132, 231);
+            button1.TabIndex = 74;
+            button1.Text = "REGRESAR";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
             // 
             // Form5
             // 
@@ -361,13 +414,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1019, 573);
+            Controls.Add(button1);
+            Controls.Add(dataGridView1);
             Controls.Add(label14);
             Controls.Add(cbx_entrenador);
             Controls.Add(cbx_cajero);
             Controls.Add(cbx_administrador);
             Controls.Add(btn_cerrar_sesion);
             Controls.Add(btn_clientes);
-            Controls.Add(btn_contabilidad);
             Controls.Add(btn_db_empleados);
             Controls.Add(btn_inicio);
             Controls.Add(label6);
@@ -390,6 +444,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -412,12 +467,13 @@
         private Label label6;
         private Button btn_inicio;
         private Button btn_db_empleados;
-        private Button btn_contabilidad;
         private Button btn_clientes;
         private Button btn_cerrar_sesion;
         private CheckBox cbx_administrador;
         private CheckBox cbx_cajero;
         private CheckBox cbx_entrenador;
         private Label label14;
+        private DataGridView dataGridView1;
+        private Button button1;
     }
 }

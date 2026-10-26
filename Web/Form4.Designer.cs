@@ -29,17 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             pictureBox1 = new PictureBox();
             label14 = new Label();
             btn_inicio = new Button();
             btn_db_empleados = new Button();
-            btn_contabilidad = new Button();
             btn_clientes = new Button();
             label1 = new Label();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox4 = new PictureBox();
-            listBox1 = new ListBox();
             label4 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -48,11 +51,13 @@
             lbl_promedio_asistencia = new Label();
             btn_cerrar_sesion = new Button();
             pictureBox7 = new PictureBox();
+            dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -72,7 +77,7 @@
             label14.Font = new Font("Agency FB", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label14.ForeColor = Color.Red;
             label14.Image = Properties.Resources.BG4;
-            label14.Location = new Point(36, 181);
+            label14.Location = new Point(25, 115);
             label14.Name = "label14";
             label14.Size = new Size(108, 31);
             label14.TabIndex = 32;
@@ -112,22 +117,6 @@
             btn_db_empleados.UseVisualStyleBackColor = false;
             btn_db_empleados.Click += btn_db_empleados_Click;
             // 
-            // btn_contabilidad
-            // 
-            btn_contabilidad.BackColor = Color.FromArgb(64, 64, 64);
-            btn_contabilidad.BackgroundImage = Properties.Resources.BG4;
-            btn_contabilidad.FlatAppearance.BorderSize = 0;
-            btn_contabilidad.FlatStyle = FlatStyle.Flat;
-            btn_contabilidad.Font = new Font("Agency FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_contabilidad.ForeColor = SystemColors.AppWorkspace;
-            btn_contabilidad.Location = new Point(1, 299);
-            btn_contabilidad.Margin = new Padding(3, 2, 3, 2);
-            btn_contabilidad.Name = "btn_contabilidad";
-            btn_contabilidad.Size = new Size(161, 28);
-            btn_contabilidad.TabIndex = 35;
-            btn_contabilidad.Text = "PAGOS";
-            btn_contabilidad.UseVisualStyleBackColor = false;
-            // 
             // btn_clientes
             // 
             btn_clientes.BackColor = Color.FromArgb(64, 64, 64);
@@ -136,7 +125,7 @@
             btn_clientes.FlatStyle = FlatStyle.Flat;
             btn_clientes.Font = new Font("Agency FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_clientes.ForeColor = SystemColors.AppWorkspace;
-            btn_clientes.Location = new Point(1, 332);
+            btn_clientes.Location = new Point(1, 300);
             btn_clientes.Name = "btn_clientes";
             btn_clientes.Size = new Size(161, 28);
             btn_clientes.TabIndex = 36;
@@ -149,7 +138,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Agency FB", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Red;
-            label1.Location = new Point(212, 51);
+            label1.Location = new Point(199, 43);
             label1.Name = "label1";
             label1.Size = new Size(150, 25);
             label1.TabIndex = 37;
@@ -159,7 +148,7 @@
             // pictureBox3
             // 
             pictureBox3.BackgroundImage = Properties.Resources.BG7;
-            pictureBox3.Location = new Point(212, 100);
+            pictureBox3.Location = new Point(199, 100);
             pictureBox3.Margin = new Padding(3, 2, 3, 2);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(204, 98);
@@ -169,7 +158,7 @@
             // pictureBox2
             // 
             pictureBox2.BackgroundImage = Properties.Resources.BG7;
-            pictureBox2.Location = new Point(451, 100);
+            pictureBox2.Location = new Point(199, 234);
             pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(204, 98);
@@ -179,23 +168,12 @@
             // pictureBox4
             // 
             pictureBox4.BackgroundImage = Properties.Resources.BG7;
-            pictureBox4.Location = new Point(691, 100);
+            pictureBox4.Location = new Point(199, 369);
             pictureBox4.Margin = new Padding(3, 2, 3, 2);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(204, 98);
             pictureBox4.TabIndex = 40;
             pictureBox4.TabStop = false;
-            // 
-            // listBox1
-            // 
-            listBox1.BackColor = Color.FromArgb(64, 64, 64);
-            listBox1.BorderStyle = BorderStyle.None;
-            listBox1.ForeColor = Color.White;
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(212, 231);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(683, 285);
-            listBox1.TabIndex = 41;
             // 
             // label4
             // 
@@ -216,7 +194,7 @@
             label2.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.AppWorkspace;
             label2.Image = Properties.Resources.BG5;
-            label2.Location = new Point(470, 116);
+            label2.Location = new Point(230, 253);
             label2.Name = "label2";
             label2.Size = new Size(120, 18);
             label2.TabIndex = 43;
@@ -229,7 +207,7 @@
             label3.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.AppWorkspace;
             label3.Image = Properties.Resources.BG5;
-            label3.Location = new Point(714, 116);
+            label3.Location = new Point(230, 388);
             label3.Name = "label3";
             label3.Size = new Size(87, 18);
             label3.TabIndex = 44;
@@ -242,7 +220,7 @@
             lbl_total_clientes.Font = new Font("Agency FB", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl_total_clientes.ForeColor = SystemColors.ButtonHighlight;
             lbl_total_clientes.Image = Properties.Resources.BG5;
-            lbl_total_clientes.Location = new Point(290, 139);
+            lbl_total_clientes.Location = new Point(283, 153);
             lbl_total_clientes.Name = "lbl_total_clientes";
             lbl_total_clientes.Size = new Size(42, 31);
             lbl_total_clientes.TabIndex = 45;
@@ -255,7 +233,7 @@
             lbl_membresias_por_vencer.Font = new Font("Agency FB", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl_membresias_por_vencer.ForeColor = SystemColors.ButtonHighlight;
             lbl_membresias_por_vencer.Image = Properties.Resources.BG5;
-            lbl_membresias_por_vencer.Location = new Point(534, 143);
+            lbl_membresias_por_vencer.Location = new Point(283, 286);
             lbl_membresias_por_vencer.Name = "lbl_membresias_por_vencer";
             lbl_membresias_por_vencer.Size = new Size(42, 31);
             lbl_membresias_por_vencer.TabIndex = 46;
@@ -267,7 +245,7 @@
             lbl_promedio_asistencia.Font = new Font("Agency FB", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl_promedio_asistencia.ForeColor = SystemColors.ButtonHighlight;
             lbl_promedio_asistencia.Image = Properties.Resources.BG5;
-            lbl_promedio_asistencia.Location = new Point(782, 139);
+            lbl_promedio_asistencia.Location = new Point(283, 420);
             lbl_promedio_asistencia.Name = "lbl_promedio_asistencia";
             lbl_promedio_asistencia.Size = new Size(42, 31);
             lbl_promedio_asistencia.TabIndex = 47;
@@ -291,12 +269,59 @@
             // pictureBox7
             // 
             pictureBox7.BackgroundImage = (Image)resources.GetObject("pictureBox7.BackgroundImage");
-            pictureBox7.Location = new Point(27, 70);
+            pictureBox7.Location = new Point(25, 12);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(110, 100);
             pictureBox7.TabIndex = 49;
             pictureBox7.TabStop = false;
             pictureBox7.Click += pictureBox7_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridViewCellStyle1.BackColor = Color.Black;
+            dataGridViewCellStyle1.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Red;
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.BackgroundColor = Color.FromArgb(64, 64, 64);
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Black;
+            dataGridViewCellStyle2.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Red;
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.Black;
+            dataGridViewCellStyle3.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Red;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView1.GridColor = Color.Black;
+            dataGridView1.Location = new Point(431, 100);
+            dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.Black;
+            dataGridViewCellStyle4.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = Color.Red;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.BackColor = Color.Black;
+            dataGridViewCellStyle5.Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.Red;
+            dataGridViewCellStyle5.SelectionForeColor = Color.White;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridView1.Size = new Size(561, 367);
+            dataGridView1.TabIndex = 50;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Form4
             // 
@@ -304,6 +329,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1018, 576);
+            Controls.Add(dataGridView1);
             Controls.Add(pictureBox7);
             Controls.Add(btn_cerrar_sesion);
             Controls.Add(lbl_promedio_asistencia);
@@ -312,13 +338,11 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label4);
-            Controls.Add(listBox1);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox3);
             Controls.Add(label1);
             Controls.Add(btn_clientes);
-            Controls.Add(btn_contabilidad);
             Controls.Add(btn_db_empleados);
             Controls.Add(btn_inicio);
             Controls.Add(label14);
@@ -331,6 +355,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -341,13 +366,11 @@
         private Label label14;
         private Button btn_inicio;
         private Button btn_db_empleados;
-        private Button btn_contabilidad;
         private Button btn_clientes;
         private Label label1;
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox4;
-        private ListBox listBox1;
         private Label label4;
         private Label label2;
         private Label label3;
@@ -356,5 +379,6 @@
         private Label lbl_promedio_asistencia;
         private Button btn_cerrar_sesion;
         private PictureBox pictureBox7;
+        private DataGridView dataGridView1;
     }
 }
