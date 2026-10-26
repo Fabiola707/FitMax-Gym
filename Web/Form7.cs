@@ -90,12 +90,12 @@ namespace Web//pantalla de venta de productos y descontardel stock
                 MessageBox.Show("Por favor, selecciona un producto de la lista.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (string.IsNullOrWhiteSpace(txb_cantidad_productos.Text))
+            if (string.IsNullOrWhiteSpace(txb_cantidad_productos.Text))//caja no vacia
             {
                 MessageBox.Show("Por favor, ingresa una cantidad.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            //camntidad mayor a 0
+            //camntidad mayor a 0, int
             if (!int.TryParse(txb_cantidad_productos.Text.Trim(), out int cantidadIngresada) || cantidadIngresada <= 0)
             {
                 MessageBox.Show("Ingresa una cantidad válida.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -115,6 +115,7 @@ namespace Web//pantalla de venta de productos y descontardel stock
                 return;
             }
             bool productoExiste = false;//existencia
+            //recorrido carrito
             foreach (DataRow dr in dtCarrito.Rows)
             {
                 if (Convert.ToInt32(dr["IdProducto"]) == idProducto)
@@ -131,15 +132,16 @@ namespace Web//pantalla de venta de productos y descontardel stock
                     productoExiste = true;
                     break;
                 }
-                if (!productoExiste)
-                {
-                    dtCarrito.Rows.Add(nombreProducto, precioUnitario, cantidadIngresada);//quité id
-                }
-
-                //total general
-                CalcularTotalGeneral();
-                txb_cantidad_productos.Clear();
             }
+            if (!productoExiste)//añadir si no existe
+            {
+                dtCarrito.Rows.Add(idProducto, nombreProducto, precioUnitario, cantidadIngresada);//quité id, no debi quitar id
+            }
+
+            //total general
+            CalcularTotalGeneral();
+            txb_cantidad_productos.Clear();
+
         }
         private void CalcularTotalGeneral()
         {
@@ -183,7 +185,9 @@ namespace Web//pantalla de venta de productos y descontardel stock
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            string filtro = txb_producto_nombre_id.Text.Trim();
+            CargarProductos();
+            // CargarProductos(filtro);
         }
         private void CargarProductos()
         {
@@ -242,11 +246,11 @@ namespace Web//pantalla de venta de productos y descontardel stock
                 lbl_mostrar_precio.Text = "$" + precio.ToString("0.00");//lbl de precio
             }
         }
-        private DataTable dtCarrito= new DataTable();
+        private DataTable dtCarrito = new DataTable();
 
         private void dgv_compra_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            //CargarProductos();
         }
 
         private void lbl_mostrar_precio_Click(object sender, EventArgs e)
@@ -306,7 +310,7 @@ namespace Web//pantalla de venta de productos y descontardel stock
                     {
                         try
                         {
-                            string queryPago = "INSERT INTO fitmaxdb.pagos (Total, MetodoPago, Fecha) VALUES (@total, @metodo, NOW())";
+                            string queryPago = "INSERT INTO fitmaxdb.pagos (Total, MetodoPago, FechaPago) VALUES (@total, @metodo, NOW())";
                             using (MySqlCommand cmdPago = new MySqlCommand(queryPago, conexion, transaccion))
                             {
                                 cmdPago.Parameters.AddWithValue("@total", totalGeneral);
@@ -361,6 +365,18 @@ namespace Web//pantalla de venta de productos y descontardel stock
         private void lbl_total_a_pagar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txb_producto_nombre_id_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            this.Hide();
+            form2.Show();
         }
     }
 }

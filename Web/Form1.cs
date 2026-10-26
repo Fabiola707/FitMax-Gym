@@ -3,7 +3,7 @@ namespace Web
 {
     public partial class Form1 : Form
     {
-        private static string connectionString = @"Server=localhost;Port=3307;Database=FitMaxDB;Uid=root;Pwd=;paola05";
+        private static string connectionString = @"Server=localhost;Port=3306;Database=fitmaxdb;Uid=root;Pwd=19503236;";
         public Form1()
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace Web
             }
 
             // 2. Consulta a la base de datos de manera segura usando parámetros
-            string query = "SELECT COUNT(*) FROM usuarios WHERE username = @usuario AND password = @password";
+            string query = "SELECT COUNT(*) FROM usuarios WHERE NombreUsuario = @usuario AND ContrasenaHash = @password";
 
             try
             {
@@ -87,6 +87,7 @@ namespace Web
 
         private void txb_contraseña_TextChanged(object sender, EventArgs e)
         {
+            txb_contraseña.PasswordChar = '*';
 
         }
 

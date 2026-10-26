@@ -63,6 +63,7 @@
             label9 = new Label();
             lbl_cambio_cliente = new Label();
             btn_finalizar_compra = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgv_existencia).BeginInit();
@@ -193,7 +194,9 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgv_existencia.DefaultCellStyle = dataGridViewCellStyle3;
             dgv_existencia.Location = new Point(189, 99);
+            dgv_existencia.MultiSelect = false;
             dgv_existencia.Name = "dgv_existencia";
+            dgv_existencia.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.Black;
             dataGridViewCellStyle4.Font = new Font("Agency FB", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -202,6 +205,7 @@
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
             dgv_existencia.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dgv_existencia.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_existencia.Size = new Size(341, 231);
             dgv_existencia.TabIndex = 79;
             dgv_existencia.CellContentClick += dgv_existencia_CellContentClick;
@@ -221,6 +225,7 @@
             txb_producto_nombre_id.Name = "txb_producto_nombre_id";
             txb_producto_nombre_id.Size = new Size(141, 23);
             txb_producto_nombre_id.TabIndex = 81;
+            txb_producto_nombre_id.TextChanged += txb_producto_nombre_id_TextChanged;
             // 
             // btn_buscar_producto
             // 
@@ -454,9 +459,24 @@
             btn_finalizar_compra.Name = "btn_finalizar_compra";
             btn_finalizar_compra.Size = new Size(387, 38);
             btn_finalizar_compra.TabIndex = 103;
-            btn_finalizar_compra.Text = "FINALIZAR COMPRA";
+            btn_finalizar_compra.Text = "COBRAR";
             btn_finalizar_compra.UseVisualStyleBackColor = false;
             btn_finalizar_compra.Click += btn_finalizar_compra_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Red;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Agency FB", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.Window;
+            button1.Location = new Point(743, 382);
+            button1.Name = "button1";
+            button1.Size = new Size(249, 38);
+            button1.TabIndex = 104;
+            button1.Text = "FINALIZAR COMPRA";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
             // 
             // Form7
             // 
@@ -464,6 +484,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1017, 575);
+            Controls.Add(button1);
             Controls.Add(btn_finalizar_compra);
             Controls.Add(lbl_cambio_cliente);
             Controls.Add(label9);
@@ -536,5 +557,6 @@
         private Label label9;
         private Label lbl_cambio_cliente;
         private Button btn_finalizar_compra;
+        private Button button1;
     }
 }

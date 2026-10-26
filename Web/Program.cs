@@ -1,3 +1,4 @@
+using MySql;
 namespace Web
 {
     internal static class Program
@@ -14,7 +15,7 @@ namespace Web
             Application.SetCompatibleTextRenderingDefault(false);
 
             //ApplicationConfiguration.Initialize();
-            Application.Run(new Form2());
+            Application.Run(new Form1());
         }
     }
 }
