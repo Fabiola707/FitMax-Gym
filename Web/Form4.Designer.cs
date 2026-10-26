@@ -303,7 +303,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.GridColor = Color.Black;
-            dataGridView1.Location = new Point(431, 100);
+            dataGridView1.Location = new Point(446, 100);
             dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.Black;
@@ -319,7 +319,7 @@
             dataGridViewCellStyle5.SelectionBackColor = Color.Red;
             dataGridViewCellStyle5.SelectionForeColor = Color.White;
             dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridView1.Size = new Size(561, 367);
+            dataGridView1.Size = new Size(546, 367);
             dataGridView1.TabIndex = 50;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
