@@ -310,7 +310,7 @@ namespace Web//pantalla de venta de productos y descontardel stock
                     {
                         try
                         {
-                            string queryPago = "INSERT INTO fitmaxdb.pagos (Monto, MetodoPago, FechaPago) VALUES (@total, @metodo, NOW())";
+                            string queryPago = "INSERT INTO fitmaxdb.pagos (Total, Monto, MetodoPago, FechaPago) VALUES (@total, @total, @metodo, NOW())";
                             using (MySqlCommand cmdPago = new MySqlCommand(queryPago, conexion, transaccion))
                             {
                                 cmdPago.Parameters.AddWithValue("@total", totalGeneral);
