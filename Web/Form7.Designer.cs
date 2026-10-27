@@ -405,7 +405,7 @@
             // 
             // txb_pago_cliente
             // 
-            txb_pago_cliente.Location = new Point(581, 206);
+            txb_pago_cliente.Location = new Point(581, 233);
             txb_pago_cliente.Name = "txb_pago_cliente";
             txb_pago_cliente.Size = new Size(155, 23);
             txb_pago_cliente.TabIndex = 99;
@@ -417,7 +417,7 @@
             label8.Font = new Font("Agency FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = SystemColors.ControlLightLight;
             label8.Image = Properties.Resources.BG42;
-            label8.Location = new Point(581, 173);
+            label8.Location = new Point(581, 191);
             label8.Name = "label8";
             label8.Size = new Size(89, 20);
             label8.TabIndex = 100;
@@ -428,8 +428,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Agency FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.FromArgb(255, 128, 128);
-            label9.Image = Properties.Resources.BG41;
-            label9.Location = new Point(581, 251);
+            label9.Location = new Point(743, 458);
             label9.Name = "label9";
             label9.Size = new Size(52, 20);
             label9.TabIndex = 101;
@@ -440,8 +439,7 @@
             lbl_cambio_cliente.AutoSize = true;
             lbl_cambio_cliente.Font = new Font("Agency FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl_cambio_cliente.ForeColor = Color.FromArgb(255, 128, 128);
-            lbl_cambio_cliente.Image = Properties.Resources.BG42;
-            lbl_cambio_cliente.Location = new Point(657, 251);
+            lbl_cambio_cliente.Location = new Point(913, 458);
             lbl_cambio_cliente.Name = "lbl_cambio_cliente";
             lbl_cambio_cliente.Size = new Size(79, 20);
             lbl_cambio_cliente.TabIndex = 102;
@@ -455,7 +453,7 @@
             btn_finalizar_compra.FlatStyle = FlatStyle.Flat;
             btn_finalizar_compra.Font = new Font("Agency FB", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_finalizar_compra.ForeColor = SystemColors.Window;
-            btn_finalizar_compra.Location = new Point(580, 297);
+            btn_finalizar_compra.Location = new Point(581, 302);
             btn_finalizar_compra.Name = "btn_finalizar_compra";
             btn_finalizar_compra.Size = new Size(387, 38);
             btn_finalizar_compra.TabIndex = 103;

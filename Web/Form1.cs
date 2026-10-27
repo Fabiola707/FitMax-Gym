@@ -46,8 +46,7 @@ namespace Web
 
                         if (resultado > 0)
                         {
-                            MessageBox.Show("¡Bienvenido a FitMax", "Acceso Concedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                           // MessageBox.Show("¡Bienvenido a FitMax", "Acceso Concedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             // Aquí abres tu formulario principal del sistema:
                             Form2 form2 = new Form2();
                             this.Hide();

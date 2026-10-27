@@ -193,6 +193,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(448, 108);
             dataGridView1.TabIndex = 89;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // btn_Elite
             // 
@@ -206,6 +207,7 @@
             btn_Elite.TabIndex = 90;
             btn_Elite.Text = "ELITE";
             btn_Elite.UseVisualStyleBackColor = true;
+            btn_Elite.Click += btn_Elite_Click;
             // 
             // btn_Titan
             // 
@@ -219,6 +221,7 @@
             btn_Titan.TabIndex = 91;
             btn_Titan.Text = "TITÁN";
             btn_Titan.UseVisualStyleBackColor = true;
+            btn_Titan.Click += btn_Titan_Click;
             // 
             // btn_leyenda
             // 
@@ -230,7 +233,7 @@
             btn_leyenda.Name = "btn_leyenda";
             btn_leyenda.Size = new Size(189, 38);
             btn_leyenda.TabIndex = 92;
-            btn_leyenda.Text = "LEGENDA";
+            btn_leyenda.Text = "LEYENDA";
             btn_leyenda.UseVisualStyleBackColor = true;
             btn_leyenda.Click += btn_leyenda_Click;
             // 
@@ -240,6 +243,7 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(168, 23);
             dateTimePicker1.TabIndex = 93;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // lb_fecha_fin
             // 
@@ -280,7 +284,7 @@
             btn_buscar_miembro.TabIndex = 96;
             btn_buscar_miembro.Text = "BUSCAR";
             btn_buscar_miembro.UseVisualStyleBackColor = false;
-            btn_buscar_miembro.Click += btn_agregar_empleado_Click;
+            btn_buscar_miembro.Click += btn_buscar_miembro_Click;
             // 
             // label4
             // 
@@ -340,7 +344,7 @@
             btn_actualizar_membresia.TabIndex = 101;
             btn_actualizar_membresia.Text = "ACEPTAR";
             btn_actualizar_membresia.UseVisualStyleBackColor = false;
-            btn_actualizar_membresia.Click += button1_Click;
+            btn_actualizar_membresia.Click += btn_actualizar_membresia_Click;
             // 
             // btn_finalizar
             // 
